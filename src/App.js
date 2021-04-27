@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from "@material-ui/core/Container";
+import "fontsource-roboto";
+import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import ContactMe from "./pages/ContactMe";
+import GlobalStyle from "./components/GlobalStyle";
+import Nav from "./components/Nav";
+import { Switch, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{ color: "white" }}>
+      <GlobalStyle />
+      <Nav />
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/portfolio">
+            <Portfolio />
+          </Route>
+          <Route
+            path="/contact-
+        
+        me"
+          >
+            <ContactMe />
+          </Route>
+        </Switch>
+      </AnimatePresence>
+    </Container>
   );
 }
 
