@@ -47,7 +47,7 @@ const NavStyle = styled.nav`
   /* position: sticky;
   top: 0;
   z-index: 10; */
-  border: 2px solid blue;
+  //border: 2px solid blue;
   background: #fff;
   ul {
     flex: 0.5;

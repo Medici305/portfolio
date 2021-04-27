@@ -9,7 +9,20 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Public Sans', sans-serif;
-        background: black;
+    }
+
+    h2 {
+        font-family: "Ibarra Real Nova", serif;
+        font-size: 2rem;
+        line-height: 3rem;
+        letter-spacing: -0.36px;
+        text-align: center;
+        // Responsive
+        @media (max-width: 578px) {
+            font-size: 3rem;
+            line-height: 3.5rem;
+            margin-top: 1rem;
+        }
     }
 
     ul {
@@ -44,12 +57,6 @@ const GlobalStyle = createGlobalStyle`
         @media (max-width: 578px) {
             display: inline;
         }
-    }
-
-    img {
-        width: 100%;
-        height: 70vh;
-        object-fit: cover;
     }
 `;
 

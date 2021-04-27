@@ -28,13 +28,14 @@ const Dropdown = () => {
 // Style components
 const StyleDropdown = styled(motion.div)`
   position: absolute;
-  left: 5%;
-  top: 100%;
-  width: 90%;
+  left: 3%;
+  top: 15%;
+  width: 94%;
   height: 45vh;
   background: #fff;
   border: 2px solid #5fb4a8;
   border-radius: 0.2rem;
+  z-index: 200;
   @media (min-width: 578px) {
     display: none;
   }
