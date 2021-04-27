@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Ibarra Real Nova", serif;
         letter-spacing: -0.36px;
         text-align: center;
-        font-size: 4rem;
+        font-size: 3rem;
         color: #33323D;
     }
 
@@ -39,11 +39,6 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.4rem;
         text-transform: uppercase;
         color: black;
-    }
-
-    hr {
-      width: 80%;
-      border-radius: 4rem;
     }
 
     svg {

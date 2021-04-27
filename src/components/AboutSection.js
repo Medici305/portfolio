@@ -7,25 +7,25 @@ import Julien from "../img/pexels-thyrone-paas-1722198.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginBottom: "5rem",
-  },
-  box: {
-    //border: "2px solid green",
+    marginBottom: "10rem",
+    "@media (max-width: 992px)": {
+      marginBottom: "5rem",
+    },
   },
   image: {
-    // // Labtop screen
-    // "@media (max-width: 992px)": {
-    //   flex: ".2",
-    // },
+    "@media (max-width: 992px)": {
+      marginBottom: "2rem",
+    },
   },
   text: {
-    padding: "0 7rem",
+    padding: "0 6rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    alignItems: "center",
     // tablet screen
-    "@media (max-width: 768px)": {
-      //border: "2px solid yellow",
+    "@media (max-width: 992px)": {
+      textAlign: "center",
       padding: "0",
     },
   },
@@ -33,9 +33,10 @@ const useStyles = makeStyles((theme) => ({
     width: "50%",
     padding: ".75rem 2rem",
     borderRadius: ".1rem",
-    fontWeight: "bold",
     background: "transparent",
-    border: "2px solid #33323d",
+    border: "1px solid #33323d",
+    fontFamily: "Public Sans",
+    boxShadow: "none",
   },
 }));
 
@@ -73,9 +74,10 @@ const AboutSection = () => {
 // Styled Component
 const About = styled.div`
   h2 {
-    text-align: left;
-    @media (max-width: 768px) {
-      font-size: 3.5rem;
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+    @media (max-width: 992px) {
       margin: 1rem 0;
     }
   }
@@ -86,7 +88,6 @@ const About = styled.div`
     // Responsive
     @media (max-width: 578px) {
       height: 40vh;
-      //border: 2px solid green;
     }
   }
   hr {
@@ -98,8 +99,8 @@ const About = styled.div`
       background: #33323d;
       color: #fff;
     }
-    @media (max-width: 768px) {
-      margin: 1rem 0;
+    @media (max-width: 992px) {
+      margin: 2rem 0;
     }
   }
 `;

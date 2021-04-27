@@ -64,6 +64,10 @@ const NavStyle = styled.nav`
       }
     }
   }
+  hr {
+    width: 80%;
+    border-radius: 4rem;
+  }
 `;
 
 const Logo = styled.div`
