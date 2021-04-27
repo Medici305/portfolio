@@ -61,9 +61,7 @@ const IntroSection = () => {
           <img src={Code} alt="code" />
         </Grid>
         <Grid item className={classes.text} sm={8} lg={5}>
-          <h2>
-            Hey, I'm Abubaker Osman and I love building beautiful websites
-          </h2>
+          <h2>Hey, I'm Julien Osman and I love building beautiful websites.</h2>
           <Button
             variant="contained"
             color="secondary"
@@ -80,6 +78,16 @@ const IntroSection = () => {
 
 // styled components
 const Intro = styled.div`
+  h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+    // Responsive
+    @media (max-width: 578px) {
+      font-size: 3rem;
+      line-height: 3.5rem;
+      margin-top: 1rem;
+    }
+  }
   img {
     width: 100%;
     height: 85vh;
