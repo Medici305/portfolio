@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1rem;
         line-height: 2rem;
         letter-spacing: 0;
-        color: #535353;
+        color: #939398;
     }
 
     ul {
@@ -54,6 +54,12 @@ const GlobalStyle = createGlobalStyle`
             display: inline;
         }
     }
+
+      .line {
+    width: 100%;
+    height: 0.05rem;
+    background: #e2e2e2;
+  }
 `;
 
 export default GlobalStyle;

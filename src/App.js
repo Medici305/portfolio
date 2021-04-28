@@ -18,7 +18,7 @@ function App() {
       <GlobalStyle />
       <Nav toggle={toggle} setToggle={setToggle} />
       <Container>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence initial={false} exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
             <Route exact path="/">
               <Home />
@@ -26,11 +26,7 @@ function App() {
             <Route path="/portfolio">
               <Portfolio />
             </Route>
-            <Route
-              path="/contact-
-        
-        me"
-            >
+            <Route path="/contact-me">
               <ContactMe />
             </Route>
           </Switch>

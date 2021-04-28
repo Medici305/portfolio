@@ -1,32 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-
-const useStyles = makeStyles((theme) => ({
-  root: {},
-}));
+import { motion } from "framer-motion";
+import { pageAnimation } from "../Animation";
+import GetInTouch from "../components/GetInTouch";
 
 const ContactMe = () => {
-  const classes = useStyles();
   return (
-    <StyledContact>
-      {/* 1. Get in touch */}
-      <Grid container>
-        <Grid item>
-          Slippin
-        </Grid>
-        <Grid item>
-          Fallin
-        </Grid>
-      </Grid>
-      {/* 2. Contact me */}
+    <StyledContact
+      variants={pageAnimation}
+      exit="exit"
+      initial="hidden"
+      animate="show"
+    >
+      <GetInTouch />
     </StyledContact>
   );
 };
 
 // Styled Component
-const StyledContact = styled.div`
+const StyledContact = styled(motion.div)`
   color: black;
 `;
 

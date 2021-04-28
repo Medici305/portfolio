@@ -35,3 +35,26 @@ export const popupLink = {
     },
   },
 };
+
+export const pageAnimation = {
+  hidden: {
+    opacity: 0,
+    y: 300,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.1,
+    //y: 300,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};

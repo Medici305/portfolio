@@ -58,11 +58,6 @@ const CollabSection = () => {
 };
 
 const Collaborate = styled.div`
-  .line {
-    width: 100%;
-    height: 0.05rem;
-    background: #7d7d7d;
-  }
   button {
     color: rgb(51, 50, 61);
     &:hover {
