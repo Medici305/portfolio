@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -37,27 +38,29 @@ const FooterSection = () => {
   const classes = useStyles();
   return (
     <Footer>
-      <Grid container className={classes.box}>
-        <Grid item className={classes.links} xs={12} md={8} lg={6}>
-          <FontAwesomeIcon size="3x" icon={faCode} />
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li className="portfolio">
-              <Link to="/portfolio">Portfolio</Link>
-            </li>
-            <li>
-              <Link to="/contact-me">Contact Me</Link>
-            </li>
-          </ul>
+      <Container>
+        <Grid container className={classes.box}>
+          <Grid item className={classes.links} xs={12} md={8} lg={6}>
+            <FontAwesomeIcon size="4x" icon={faCode} />
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li className="portfolio">
+                <Link to="/portfolio">Portfolio</Link>
+              </li>
+              <li>
+                <Link to="/contact-me">Contact Me</Link>
+              </li>
+            </ul>
+          </Grid>
+          <Grid item className={classes.icon} xs={12} md={4} lg={6}>
+            <FontAwesomeIcon size="2x" icon={faGithub} />
+            <FontAwesomeIcon size="2x" icon={faTwitter} />
+            <FontAwesomeIcon size="2x" icon={faLinkedin} />
+          </Grid>
         </Grid>
-        <Grid item className={classes.icon} xs={12} md={4} lg={6}>
-          <FontAwesomeIcon size="2x" icon={faGithub} />
-          <FontAwesomeIcon size="2x" icon={faTwitter} />
-          <FontAwesomeIcon size="2x" icon={faLinkedin} />
-        </Grid>
-      </Grid>
+      </Container>
     </Footer>
   );
 };
@@ -65,7 +68,7 @@ const FooterSection = () => {
 // Styled Component
 const Footer = styled.div`
   background: rgb(51, 50, 61);
-  padding: 2rem 8rem;
+  padding: 2rem 0;
   a {
     color: #fff;
     margin-left: 2rem;
@@ -90,7 +93,7 @@ const Footer = styled.div`
     }
   }
   @media (max-width: 768px) {
-    padding: 3rem 0;
+    padding: 4rem 0;
   }
 `;
 
