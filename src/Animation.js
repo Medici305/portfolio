@@ -13,6 +13,14 @@ export const dropdown = {
       staggerChildren: 0.25,
     },
   },
+  exit: {
+    opacity: 0,
+    y: -200,
+    transition: {
+      duration: 0.75,
+      ease: "anticipate",
+    },
+  },
 };
 
 export const popupLink = {

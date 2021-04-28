@@ -2,7 +2,6 @@ import React from "react";
 import IntroSection from "../components/IntroSection";
 import AboutSection from "../components/AboutSection";
 import CollabSection from "../components/CollabSection";
-import FooterSection from "../components/FooterSection";
 
 const Home = () => {
   return (
@@ -10,7 +9,6 @@ const Home = () => {
       <IntroSection />
       <AboutSection />
       <CollabSection />
-      <FooterSection />
     </div>
   );
 };

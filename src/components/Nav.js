@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCode, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = () => {
-  const [toggle, setToggle] = useState(false);
+const Nav = ({ toggle, setToggle }) => {
   return (
     <NavStyle>
       {/* 1. Logo */}
@@ -33,7 +32,7 @@ const Nav = () => {
         size="2x"
         icon={toggle ? faTimes : faBars}
       />
-      {toggle && <Dropdown />}
+      {toggle && <Dropdown toggle={toggle} setToggle={setToggle} />}
     </NavStyle>
   );
 };
@@ -41,6 +40,7 @@ const Nav = () => {
 // Styled components
 const NavStyle = styled.nav`
   min-height: 15vh;
+  padding: 0 9rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,7 +57,7 @@ const NavStyle = styled.nav`
     }
     a {
       transition: all 0.5s ease-in-out;
-      color: #33323d;
+      color: rgb(51, 50, 61);
       font-weight: 600;
       &:hover {
         color: #5fb4a8;
@@ -67,6 +67,9 @@ const NavStyle = styled.nav`
   hr {
     width: 80%;
     border-radius: 4rem;
+  }
+  @media (max-width: 992px) {
+    padding: 0 2rem;
   }
 `;
 

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: "0",
     left: "0",
     background: "#fff",
-    color: "#33323D",
+    color: "rgb(51, 50, 61)",
     //border: "2px solid red",
     padding: "4rem",
     textAlign: "center",
@@ -102,6 +102,7 @@ const Intro = styled.div`
     text-align: center;
     svg {
       color: #fff;
+      margin-right: 2rem;
     }
   }
 `;

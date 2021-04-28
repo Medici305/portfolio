@@ -5,20 +5,31 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { dropdown } from "../Animation";
 
-const Dropdown = () => {
+const Dropdown = ({ toggle, setToggle }) => {
   return (
-    <StyleDropdown variants={dropdown} initial="hidden" animate="show">
+    <StyleDropdown
+      variants={dropdown}
+      exit="exit"
+      initial="hidden"
+      animate="show"
+    >
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link onClick={() => setToggle(!toggle)} to="/">
+            Home
+          </Link>
         </li>
         <hr />
         <li>
-          <Link to="/portfolio">Portfolio</Link>
+          <Link onClick={() => setToggle(!toggle)} to="/portfolio">
+            Portfolio
+          </Link>
         </li>
         <hr />
         <li>
-          <Link to="/contact-me">Contact Me</Link>
+          <Link onClick={() => setToggle(!toggle)} to="/contact-me">
+            Contact Me
+          </Link>
         </li>
       </ul>
     </StyleDropdown>

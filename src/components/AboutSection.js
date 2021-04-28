@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import Julien from "../img/pexels-thyrone-paas-1722198.jpg";
+import Julien from "../img/anime.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     padding: ".75rem 2rem",
     borderRadius: ".1rem",
     background: "transparent",
-    border: "1px solid #33323d",
+    border: "1px solid rgb(51, 50, 61)",
     fontFamily: "Public Sans",
     boxShadow: "none",
   },
@@ -94,9 +94,9 @@ const About = styled.div`
     width: 100%;
   }
   button {
-    color: #33323d;
+    color: rgb(51, 50, 61);
     &:hover {
-      background: #33323d;
+      background: rgb(51, 50, 61);
       color: #fff;
     }
     @media (max-width: 992px) {

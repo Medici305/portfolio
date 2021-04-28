@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     padding: ".75rem 2rem",
     borderRadius: ".1rem",
     background: "transparent",
-    border: "1px solid #33323d",
+    border: "1px solid rgb(51, 50, 61)",
     fontFamily: "Public Sans",
     boxShadow: "none",
     "@media (max-width: 992px)": {
@@ -64,9 +64,9 @@ const Collaborate = styled.div`
     background: #7d7d7d;
   }
   button {
-    color: #33323d;
+    color: rgb(51, 50, 61);
     &:hover {
-      background: #33323d;
+      background: rgb(51, 50, 61);
       color: #fff;
     }
     @media (max-width: 992px) {

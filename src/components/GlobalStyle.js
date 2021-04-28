@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
         letter-spacing: -0.36px;
         text-align: center;
         font-size: 3rem;
-        color: #33323D;
+        color: rgb(51, 50, 61);
     }
 
     p {
