@@ -17,7 +17,7 @@ const ContactMe = () => {
           Slippin
         </Grid>
         <Grid item>
-          Falling
+          Fallin
         </Grid>
       </Grid>
       {/* 2. Contact me */}
