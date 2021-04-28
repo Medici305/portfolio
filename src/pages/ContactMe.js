@@ -14,7 +14,7 @@ const ContactMe = () => {
       {/* 1. Get in touch */}
       <Grid container>
         <Grid item>
-          Slipping
+          Slippin
         </Grid>
         <Grid item>
           Falling
