@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     // Responsive
     "@media (max-width: 992px)": {
-      justifyContent: "center",
+      justifyContent: "space-evenly",
     },
   },
 }));
@@ -41,7 +41,7 @@ const FooterSection = () => {
       <Container>
         <Grid container className={classes.box}>
           <Grid item className={classes.links} xs={12} md={8} lg={6}>
-            <FontAwesomeIcon size="4x" icon={faCode} />
+            <FontAwesomeIcon size="3x" icon={faCode} />
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -55,9 +55,9 @@ const FooterSection = () => {
             </ul>
           </Grid>
           <Grid item className={classes.icon} xs={12} md={4} lg={6}>
-            <FontAwesomeIcon size="2x" icon={faGithub} />
-            <FontAwesomeIcon size="2x" icon={faTwitter} />
-            <FontAwesomeIcon size="2x" icon={faLinkedin} />
+            <FontAwesomeIcon className="icon" size="2x" icon={faGithub} />
+            <FontAwesomeIcon className="icon" size="2x" icon={faTwitter} />
+            <FontAwesomeIcon className="icon" size="2x" icon={faLinkedin} />
           </Grid>
         </Grid>
       </Container>
@@ -73,12 +73,19 @@ const Footer = styled.div`
     color: #fff;
     margin-left: 2rem;
     @media (max-width: 768px) {
+      text-align: center;
       font-size: 0.9rem;
+      margin: 0;
     }
   }
   svg {
     color: #fff;
+  }
+  .icon {
     margin-left: 2rem;
+    @media (max-width: 992px) {
+      margin: 0;
+    }
   }
   ul {
     @media (max-width: 992px) {

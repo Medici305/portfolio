@@ -61,11 +61,14 @@ const NavStyle = styled.nav`
     a {
       transition: all 0.5s ease-in-out;
       color: rgb(51, 50, 61);
-      font-weight: 600;
+      font-weight: 700;
       &:hover {
         color: #5fb4a8;
       }
     }
+  }
+  svg {
+    color: rgb(51, 50, 61);
   }
   hr {
     width: 80%;

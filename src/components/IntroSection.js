@@ -103,6 +103,9 @@ const Intro = styled.div`
     svg {
       color: #fff;
       margin-right: 2rem;
+      @media (max-width: 768px) {
+        margin-right: 0rem;
+      }
     }
   }
 `;

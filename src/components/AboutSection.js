@@ -87,7 +87,8 @@ const About = styled.div`
     object-fit: cover;
     // Responsive
     @media (max-width: 578px) {
-      height: 40vh;
+      height: 60vh;
+      object-fit: contain;
     }
   }
   hr {
