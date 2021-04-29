@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import emailjs from "emailjs-com";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -40,15 +43,48 @@ const useStyles = makeStyles((theme) => ({
 
 const SendEmail = () => {
   const classes = useStyles();
+  // State
+  const [confirm, setConfirm] = useState(false);
+  // Function
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_eemftn6",
+        "template_5gzyhrk",
+        e.target,
+        "user_Moi9wBEPsiw7ryv4JpuOm"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setConfirm(!confirm);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+    setTimeout(() => {
+      refreshPage();
+    }, 4000);
+  }
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <Contact>
       <Grid container className={classes.boxes}>
         <div className="line"></div>
-        <Grid item className={classes.box} sm={12} md={4}>
+        <Grid item className={classes.box} xs={12} sm={12} md={4}>
           <h2>Contact Me</h2>
         </Grid>
-        <Grid item className={classes.box} sm={12} md={6}>
-          <form className={classes.form}>
+        <Grid item className={classes.box} xs={12} sm={12} md={6}>
+          <form onSubmit={sendEmail} className={classes.form}>
             {/* 1. Name */}
             <TextField
               required
@@ -78,7 +114,17 @@ const SendEmail = () => {
               rows={4}
               variant="outlined"
             />
-            <Button variant="contained" className={classes.button}>
+            {confirm && (
+              <div className="confirmation">
+                <p>Message sent successfully</p>
+                <FontAwesomeIcon className="icon" icon={faThumbsUp} />
+              </div>
+            )}
+            <Button
+              variant="contained"
+              type="submit"
+              className={classes.button}
+            >
               Send Message
             </Button>
           </form>
@@ -108,6 +154,15 @@ const Contact = styled.div`
   }
   .line {
     margin-bottom: 3rem;
+  }
+  .confirmation {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-left: 0.5rem;
+      color: rgb(51, 50, 61);
+    }
   }
 `;
 
