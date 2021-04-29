@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Dropdown from "./Dropdown";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCode, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = ({ toggle, setToggle }) => {
+  const { pathname } = useLocation();
   return (
     <Container>
       <NavStyle>
@@ -19,13 +20,25 @@ const Nav = ({ toggle, setToggle }) => {
         {/* 2. Nav links */}
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className={pathname === "/" ? "highlight" : ""} to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/portfolio">Portfolio</Link>
+            <Link
+              className={pathname === "/portfolio" ? "highlight" : ""}
+              to="/portfolio"
+            >
+              Portfolio
+            </Link>
           </li>
           <li>
-            <Link to="/contact-me">Contact Me</Link>
+            <Link
+              className={pathname === "/contact-me" ? "highlight" : ""}
+              to="/contact-me"
+            >
+              Contact Me
+            </Link>
           </li>
         </ul>
         {/* 3. Hamburger */}
@@ -61,7 +74,7 @@ const NavStyle = styled.nav`
     a {
       transition: all 0.5s ease-in-out;
       color: rgb(51, 50, 61);
-      font-weight: 700;
+      font-weight: 600;
       &:hover {
         color: #5fb4a8;
       }
@@ -76,6 +89,9 @@ const NavStyle = styled.nav`
   }
   @media (max-width: 992px) {
     //padding: 0 2rem;
+  }
+  .highlight {
+    color: #5fb4a2;
   }
 `;
 

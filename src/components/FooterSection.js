@@ -74,7 +74,6 @@ const Footer = styled.div`
     margin-left: 2rem;
     @media (max-width: 768px) {
       text-align: center;
-      font-size: 0.9rem;
       margin: 0;
     }
   }

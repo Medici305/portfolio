@@ -12,9 +12,11 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {},
   boxes: {
-    // border: "2px solid black",
     marginTop: "4rem",
     justifyContent: "space-between",
+    "@media (max-width: 768px)": {
+      marginTop: "2rem",
+    },
   },
   box: {
     // border: "2px solid red",
