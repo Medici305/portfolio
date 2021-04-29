@@ -11,6 +11,23 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Public Sans', sans-serif;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
+    h1 {
+        font-family: "Ibarra Real Nova", serif;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: rgb(51, 50, 61);
+    // Responsive
+        @media (max-width: 578px) {
+            font-size: 3rem;
+            line-height: 3.5rem;
+            margin-top: 1rem;
+        }
+    }
+
     h2 {
         font-family: "Ibarra Real Nova", serif;
         letter-spacing: -0.36px;

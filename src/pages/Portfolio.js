@@ -38,6 +38,10 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid rgb(51, 50, 61)",
     fontFamily: "Public Sans",
     boxShadow: "none",
+    "&:hover": {
+      background: "rgb(51, 50, 61)",
+      color: "#fff",
+    },
   },
 }));
 

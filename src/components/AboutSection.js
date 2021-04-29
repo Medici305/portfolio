@@ -37,13 +37,21 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid rgb(51, 50, 61)",
     fontFamily: "Public Sans",
     boxShadow: "none",
+    "&:hover": {
+      background: "rgb(51, 50, 61)",
+      color: "#fff",
+    },
+    "@media (max-width: 992px)": {
+      margin: "2rem 0",
+    },
   },
 }));
 
-const AboutSection = () => {
+const AboutSection = ({ myRef }) => {
   const classes = useStyles();
+
   return (
-    <About className={classes.root}>
+    <About ref={myRef} className={classes.root}>
       <Grid container className={classes.box}>
         <Grid item className={classes.image} xs={12} md={4} lg={6}>
           <img src={Julien} alt="Julien" />
@@ -61,7 +69,11 @@ const AboutSection = () => {
             find me outdoors. I love being out in nature whether that’s going
             for a walk, run or cycling. I’d love you to check out my work.
           </p>
-          <Button variant="contained" className={classes.button}>
+          <Button
+            href="./portfolio"
+            variant="contained"
+            className={classes.button}
+          >
             Go To Portfolio
           </Button>
           <hr />
@@ -93,16 +105,6 @@ const About = styled.div`
   }
   hr {
     width: 100%;
-  }
-  button {
-    color: rgb(51, 50, 61);
-    &:hover {
-      background: rgb(51, 50, 61);
-      color: #fff;
-    }
-    @media (max-width: 992px) {
-      margin: 2rem 0;
-    }
   }
 `;
 

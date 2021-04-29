@@ -25,9 +25,12 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginTop: "2rem",
-    width: "50%",
-    padding: "1rem 2rem",
-    background: "#203A4C",
+    //padding: "1rem 2rem",
+    padding: ".75rem 1rem",
+    borderRadius: ".1rem",
+    background: "rgb(51, 50, 61)",
+    fontFamily: "Public Sans",
+    boxShadow: "none",
   },
   text: {
     position: "absolute",
@@ -51,8 +54,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const IntroSection = () => {
+const IntroSection = ({ myRef }) => {
   const classes = useStyles();
+  // Function
+  const executeScroll = () => myRef.current.scrollIntoView();
 
   return (
     <Intro className={classes.root}>
@@ -61,10 +66,11 @@ const IntroSection = () => {
           <img src={Code} alt="code" />
         </Grid>
         <Grid item className={classes.text} sm={8} lg={5}>
-          <h2>Hey, I'm Julien Osman and I love building beautiful websites.</h2>
+          <h1>Hey, I'm Julien Osman and I love building beautiful websites.</h1>
           <Button
             variant="contained"
             color="secondary"
+            onClick={executeScroll}
             className={classes.button}
             startIcon={<ExpandMoreIcon />}
           >
@@ -78,15 +84,7 @@ const IntroSection = () => {
 
 // styled components
 const Intro = styled.div`
-  h2 {
-    font-size: 2rem;
-    line-height: 3rem;
-    // Responsive
-    @media (max-width: 578px) {
-      font-size: 3rem;
-      line-height: 3.5rem;
-      margin-top: 1rem;
-    }
+  h1 {
   }
   img {
     width: 100%;
@@ -100,12 +98,19 @@ const Intro = styled.div`
   }
   button {
     text-align: center;
+    width: 50%;
+    &:hover {
+      background: #5fb4a8;
+    }
     svg {
       color: #fff;
       margin-right: 2rem;
       @media (max-width: 768px) {
         margin-right: 0rem;
       }
+    }
+    @media (max-width: 992px) {
+      width: 75%;
     }
   }
 `;

@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid rgb(51, 50, 61)",
     fontFamily: "Public Sans",
     boxShadow: "none",
+    "&:hover": {
+      background: "rgb(51, 50, 61)",
+      color: "#fff",
+    },
     "@media (max-width: 992px)": {
       marginTop: "2rem",
     },
@@ -48,7 +52,11 @@ const CollabSection = () => {
           <div className="line"></div>
         </Grid>
         <Grid item className={classes.box} xs={12} md={2}>
-          <Button variant="contained" className={classes.button}>
+          <Button
+            href="./contact-me"
+            variant="contained"
+            className={classes.button}
+          >
             Contact Me
           </Button>
         </Grid>
