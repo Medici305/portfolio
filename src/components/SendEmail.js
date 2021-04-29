@@ -69,7 +69,7 @@ const SendEmail = () => {
     e.target.reset();
     setTimeout(() => {
       refreshPage();
-    }, 4000);
+    }, 3000);
   }
 
   function refreshPage() {

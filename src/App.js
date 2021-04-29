@@ -9,10 +9,12 @@ import Nav from "./components/Nav";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import FooterSection from "./components/FooterSection";
+import data from "./data";
 
 function App() {
   const location = useLocation();
   const [toggle, setToggle] = useState(false);
+  const [siteInfo, setSiteInfo] = useState(data());
   return (
     <>
       <GlobalStyle />
@@ -24,7 +26,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/portfolio">
-              <Portfolio />
+              <Portfolio siteInfo={siteInfo} setSiteInfo={setSiteInfo} />
             </Route>
             <Route path="/contact-me">
               <ContactMe />
