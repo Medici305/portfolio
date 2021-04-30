@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import ScrollTop from "../components/ScrollTop";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -38,6 +39,7 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
   console.log(url);
   return (
     <Detail>
+      <ScrollTop />
       <Grid container className={classes.container}>
         {/* 1. Static Preview */}
         <Grid item xs={12} className={classes.image}>

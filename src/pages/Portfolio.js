@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import CollabSection from "../components/CollabSection";
+import ScrollTop from "../components/ScrollTop";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -66,6 +67,7 @@ const Portfolio = ({ siteInfo, setSiteInfo }) => {
       initial="hidden"
       animate="show"
     >
+      <ScrollTop />
       {siteInfo.map((site) =>
         site.even ? (
           <Grid container key={site.id} className={classes.container}>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { pageAnimation } from "../Animation";
 import GetInTouch from "../components/GetInTouch";
 import SendEmail from "../components/SendEmail";
+import ScrollTop from "../components/ScrollTop";
 
 const ContactMe = () => {
   return (
@@ -13,6 +14,7 @@ const ContactMe = () => {
       initial="hidden"
       animate="show"
     >
+      <ScrollTop />
       <GetInTouch />
       <SendEmail />
     </StyledContact>
@@ -20,8 +22,6 @@ const ContactMe = () => {
 };
 
 // Styled Component
-const StyledContact = styled(motion.div)`
-  
-`;
+const StyledContact = styled(motion.div)``;
 
 export default ContactMe;
