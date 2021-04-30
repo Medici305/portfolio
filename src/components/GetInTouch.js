@@ -45,9 +45,27 @@ const GetInTouch = () => {
             and attention to detail. Please do feel free to check out my online
             profiles below and get in touch using the form.
           </p>
-          <FontAwesomeIcon className="icon" size="2x" icon={faGithub} />
-          <FontAwesomeIcon className="icon" size="2x" icon={faTwitter} />
-          <FontAwesomeIcon className="icon" size="2x" icon={faLinkedin} />
+          <a
+            href="https://github.com/Medici305"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon className="icon" size="3x" icon={faGithub} />
+          </a>
+          <a
+            href="https://twitter.com/ProgrammingThug"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon className="icon" size="3x" icon={faTwitter} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/julien-o-841570190/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon className="icon" size="3x" icon={faLinkedin} />
+          </a>
         </Grid>
       </Grid>
     </StyleGreet>

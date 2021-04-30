@@ -9,6 +9,7 @@ import Nav from "./components/Nav";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import FooterSection from "./components/FooterSection";
+import ProjectDetail from "./pages/ProjectDetail";
 import data from "./data";
 
 function App() {
@@ -25,8 +26,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/portfolio">
+            <Route exact path="/portfolio">
               <Portfolio siteInfo={siteInfo} setSiteInfo={setSiteInfo} />
+            </Route>
+            <Route path="/portfolio/:id">
+              <ProjectDetail siteInfo={siteInfo} setSiteInfo={setSiteInfo} />
             </Route>
             <Route path="/contact-me">
               <ContactMe />

@@ -36,6 +36,16 @@ const GlobalStyle = createGlobalStyle`
         color: rgb(51, 50, 61);
     }
 
+    h3 {
+        font-family: "Ibarra Real Nova", serif;
+        letter-spacing: -0.36px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+        color: rgb(51, 50, 61);
+        text-align: left;
+    }
+
     p {
         font-size: 1rem;
         line-height: 2rem;

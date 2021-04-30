@@ -77,7 +77,7 @@ const Portfolio = ({ siteInfo, setSiteInfo }) => {
               <h2 className={classes.title}>{site.name}</h2>
               <p>{site.description}</p>
               <Button
-                href={site.liveSite}
+                href={site.link}
                 variant="contained"
                 className={classes.button}
               >
@@ -93,7 +93,7 @@ const Portfolio = ({ siteInfo, setSiteInfo }) => {
               <h2 className={classes.title}>{site.name}</h2>
               <p>{site.description}</p>
               <Button
-                href={site.liveSite}
+                href={site.link}
                 variant="contained"
                 className={classes.button}
               >

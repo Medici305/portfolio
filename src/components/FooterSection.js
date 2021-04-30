@@ -55,9 +55,27 @@ const FooterSection = () => {
             </ul>
           </Grid>
           <Grid item className={classes.icon} xs={12} md={4} lg={6}>
-            <FontAwesomeIcon className="icon" size="2x" icon={faGithub} />
-            <FontAwesomeIcon className="icon" size="2x" icon={faTwitter} />
-            <FontAwesomeIcon className="icon" size="2x" icon={faLinkedin} />
+            <a
+              href="https://github.com/Medici305"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon className="icon" size="3x" icon={faGithub} />
+            </a>
+            <a
+              href="https://twitter.com/ProgrammingThug"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon className="icon" size="3x" icon={faTwitter} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/julien-o-841570190/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon className="icon" size="3x" icon={faLinkedin} />
+            </a>
           </Grid>
         </Grid>
       </Container>
@@ -79,6 +97,9 @@ const Footer = styled.div`
   }
   svg {
     color: #fff;
+    &:hover {
+      color: #5fb4a2;
+    }
   }
   .icon {
     margin-left: 2rem;
