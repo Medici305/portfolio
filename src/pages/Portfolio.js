@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { pageAnimation } from "../Animation";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -44,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    width: "50%",
     padding: ".75rem 2rem",
     borderRadius: ".1rem",
     background: "transparent",
@@ -94,13 +94,11 @@ const Portfolio = ({ siteInfo, setSiteInfo }) => {
               <div className="line"></div>
               <h2 className={classes.title}>{site.name}</h2>
               <p>{site.description}</p>
-              <Button
-                href={site.link}
-                variant="contained"
-                className={classes.button}
-              >
-                view Project
-              </Button>
+              <Link to={site.link}>
+                <Button variant="contained" className={classes.button}>
+                  view Project
+                </Button>
+              </Link>
               <div className="line"></div>
             </Grid>
             <Grid item className={classes.image} xs={12} md={4} lg={6}>
