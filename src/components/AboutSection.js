@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    width: "50%",
+    width: "100%",
     padding: ".75rem 2rem",
     borderRadius: ".1rem",
     background: "transparent",
@@ -69,13 +70,11 @@ const AboutSection = ({ myRef }) => {
             find me outdoors. I love being out in nature whether that’s going
             for a walk, run or cycling. I’d love you to check out my work.
           </p>
-          <Button
-            href="./portfolio"
-            variant="contained"
-            className={classes.button}
-          >
-            Go To Portfolio
-          </Button>
+          <Link to="/portfolio">
+            <Button variant="contained" className={classes.button}>
+              Go To Portfolio
+            </Button>
+          </Link>
           <hr />
         </Grid>
       </Grid>

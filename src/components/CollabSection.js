@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -52,13 +53,15 @@ const CollabSection = () => {
           <div className="line"></div>
         </Grid>
         <Grid item className={classes.box} xs={12} md={2}>
-          <Button
-            href="./contact-me"
-            variant="contained"
-            className={classes.button}
-          >
-            Contact Me
-          </Button>
+          <Link to="/contact-me">
+            <Button
+              href="./contact-me"
+              variant="contained"
+              className={classes.button}
+            >
+              Contact Me
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </Collaborate>
