@@ -4,7 +4,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
+import ProgressiveImage from "react-progressive-image";
 import Code from "../img/pexels-negative-space-169573.jpg";
+import CompressedCode from "../img/compressed-intro.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,7 +65,11 @@ const IntroSection = ({ myRef }) => {
     <Intro className={classes.root}>
       <Grid container className={classes.box}>
         <Grid item className={classes.image} xs={12}>
-          <img src={Code} alt="code" />
+          <ProgressiveImage src={CompressedCode} placeholder="tiny-image.jpg">
+            {(src, loading) => (
+              <img style={{ opacity: .9 }} src={Code} alt="an image" />
+            )}
+          </ProgressiveImage>
         </Grid>
         <Grid item className={classes.text} sm={8} lg={5}>
           <h1>Hey, I'm Julien Osman and I love building beautiful websites.</h1>
