@@ -5,17 +5,22 @@ import { pageAnimation } from "../Animation";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
+import CollabSection from "../components/CollabSection";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  root: {},
+  container: {
     marginBottom: "10rem",
     "@media (max-width: 992px)": {
       marginBottom: "5rem",
     },
+    "@media (max-width: 578px)": {
+      marginBottom: "0rem",
+    },
   },
   image: {
     "@media (max-width: 992px)": {
-      //marginBottom: "2rem",
+      order: 1,
     },
   },
   text: {
@@ -28,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
     "@media (max-width: 992px)": {
       textAlign: "center",
       padding: "0",
+      order: 2,
+    },
+  },
+  title: {
+    fontSize: "2rem",
+    "@media (max-width: 992px)": {
+      fontSize: "3rem",
     },
   },
   button: {
@@ -47,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Portfolio = ({ siteInfo, setSiteInfo }) => {
   const classes = useStyles();
-  console.log(siteInfo);
   return (
     <StyledPortfolio
       variants={pageAnimation}
@@ -55,26 +66,48 @@ const Portfolio = ({ siteInfo, setSiteInfo }) => {
       initial="hidden"
       animate="show"
     >
-      {siteInfo.map((site) => (
-        <Grid container spacing={10}>
-          <Grid item className={classes.image} xs={12} md={4} lg={6}>
-            <img src={site.image} alt="" />
+      {siteInfo.map((site) =>
+        site.even ? (
+          <Grid container key={site.id} className={classes.container}>
+            <Grid item xs={12} md={4} lg={6}>
+              <img src={site.image} alt={site.name} />
+            </Grid>
+            <Grid item className={classes.text} xs={12} md={8} lg={6}>
+              <div className="line"></div>
+              <h2 className={classes.title}>{site.name}</h2>
+              <p>{site.description}</p>
+              <Button
+                href={site.liveSite}
+                variant="contained"
+                className={classes.button}
+              >
+                view Project
+              </Button>
+              <div className="line"></div>
+            </Grid>
           </Grid>
-          <Grid item className={classes.text} xs={12} md={8} lg={6}>
-            <div className="line"></div>
-            <h2>{site.name}</h2>
-            <p>{site.description}</p>
-            <Button
-              href={site.liveSite}
-              variant="contained"
-              className={classes.button}
-            >
-              view Project
-            </Button>
-            <div className="line"></div>
+        ) : (
+          <Grid container key={site.id} className={classes.container}>
+            <Grid item className={classes.text} xs={12} md={8} lg={6}>
+              <div className="line"></div>
+              <h2 className={classes.title}>{site.name}</h2>
+              <p>{site.description}</p>
+              <Button
+                href={site.liveSite}
+                variant="contained"
+                className={classes.button}
+              >
+                view Project
+              </Button>
+              <div className="line"></div>
+            </Grid>
+            <Grid item className={classes.image} xs={12} md={4} lg={6}>
+              <img src={site.image} alt={site.name} />
+            </Grid>
           </Grid>
-        </Grid>
-      ))}
+        )
+      )}
+      <CollabSection />
     </StyledPortfolio>
   );
 };
@@ -85,8 +118,11 @@ const StyledPortfolio = styled(motion.div)`
   margin: 5rem 0;
   img {
     width: 100%;
-    height: 40vh;
+    height: 60vh;
     object-fit: cover;
+    @media (max-width: 578px) {
+      height: 40vh;
+    }
   }
   p {
     margin: 2rem 0;
@@ -103,8 +139,11 @@ const StyledPortfolio = styled(motion.div)`
   }
   .line {
     @media (max-width: 992px) {
-      margin: 2rem 0;
+      margin: 4rem 0;
     }
+  }
+  @media (max-width: 992px) {
+    margin: 1rem 0 10rem 0;
   }
 `;
 

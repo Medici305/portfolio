@@ -1,4 +1,3 @@
-import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import todoApp from "./img/todo-desktop-preview.jpg";
 import carouselHomepage from "./img/carousel-desktop-preview.jpg";
@@ -17,6 +16,7 @@ const data = () => {
       liveSite: "https://modern-todo-app.netlify.app/",
       source: "https://github.com/Medici305/Todo_App",
       id: uuidv4(),
+      even: false,
     },
     {
       image: carouselHomepage,
@@ -26,6 +26,7 @@ const data = () => {
       liveSite: "https://carousel-homepage.netlify.app/",
       source: "https://github.com/Medici305/carousel-homepage",
       id: uuidv4(),
+      even: true,
     },
     {
       image: huddleBootstrap,
@@ -35,6 +36,7 @@ const data = () => {
       liveSite: "https://huddlebootstrap.netlify.app/",
       source: "https://github.com/Medici305/Huddle_Bootsrap",
       id: uuidv4(),
+      even: false,
     },
     {
       image: Blogr,
@@ -44,6 +46,7 @@ const data = () => {
       liveSite: "https://blogr-dynamic-site.netlify.app/",
       source: "https://github.com/Medici305/blogr_dynamic_site",
       id: uuidv4(),
+      even: true,
     },
     {
       image: ipTracking,
@@ -53,6 +56,7 @@ const data = () => {
       liveSite: "https://ip-address-tracker-2.netlify.app/",
       source: "https://github.com/Medici305/IP_Address_Tracker",
       id: uuidv4(),
+      even: false,
     },
     {
       image: urlShortening,
@@ -62,6 +66,7 @@ const data = () => {
       liveSite: "https://url-shortening-landing-page.netlify.app/",
       source: "https://github.com/Medici305/URL-shortening-API-landing-page",
       id: uuidv4(),
+      even: true,
     },
   ];
 };
