@@ -55,7 +55,6 @@ const CollabSection = () => {
         <Grid item className={classes.box} xs={12} md={2}>
           <Link to="/contact-me">
             <Button
-              href="./contact-me"
               variant="contained"
               className={classes.button}
             >

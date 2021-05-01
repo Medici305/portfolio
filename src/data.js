@@ -18,6 +18,7 @@ const data = () => {
       source: "https://github.com/Medici305/Todo_App",
       id: uuidv4(),
       even: false,
+      position: 0,
     },
     {
       image: carouselHomepage,
@@ -29,6 +30,7 @@ const data = () => {
       source: "https://github.com/Medici305/carousel-homepage",
       id: uuidv4(),
       even: true,
+      position: 1,
     },
     {
       image: huddleBootstrap,
@@ -40,6 +42,7 @@ const data = () => {
       source: "https://github.com/Medici305/Huddle_Bootsrap",
       id: uuidv4(),
       even: false,
+      position: 2,
     },
     {
       image: Blogr,
@@ -51,6 +54,7 @@ const data = () => {
       source: "https://github.com/Medici305/blogr_dynamic_site",
       id: uuidv4(),
       even: true,
+      position: 3,
     },
     {
       image: ipTracking,
@@ -62,6 +66,7 @@ const data = () => {
       source: "https://github.com/Medici305/IP_Address_Tracker",
       id: uuidv4(),
       even: false,
+      position: 4,
     },
     {
       image: urlShortening,
@@ -73,6 +78,7 @@ const data = () => {
       source: "https://github.com/Medici305/URL-shortening-API-landing-page",
       id: uuidv4(),
       even: true,
+      position: 5,
     },
   ];
 };
