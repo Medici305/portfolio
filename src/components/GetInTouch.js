@@ -62,7 +62,7 @@ const GetInTouch = () => {
           <a
             href="https://www.linkedin.com/in/julien-o-841570190/"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer"t
           >
             <FontAwesomeIcon className="icon" size="3x" icon={faLinkedin} />
           </a>

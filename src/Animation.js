@@ -58,3 +58,26 @@ export const pageAnimation = {
     },
   },
 };
+
+export const slideProject = {
+  hidden: {
+    x: "200%",
+    opacity: 0,
+  },
+  show: {
+    x: "0%",
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeIn",
+    },
+  },
+  exit: {
+    x: "-200%",
+    opacity: 0,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};

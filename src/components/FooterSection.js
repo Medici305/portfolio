@@ -46,8 +46,11 @@ const FooterSection = () => {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li className="portfolio">
+              <li className="spacing-top">
                 <Link to="/portfolio">Portfolio</Link>
+              </li>
+              <li className="spacing-bottom">
+                <Link to="/blog">Blog</Link>
               </li>
               <li>
                 <Link to="/contact-me">Contact Me</Link>
@@ -114,8 +117,11 @@ const Footer = styled.div`
       justify-content: center;
       align-items: center;
       padding: 2rem 0;
-      .portfolio {
-        padding: 1rem 0;
+      .spacing-top {
+        padding: 1rem 0 0.5rem 0;
+      }
+      .spacing-bottom {
+        padding: 0.5rem 0 1rem 0;
       }
     }
   }

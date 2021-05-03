@@ -27,6 +27,12 @@ const Dropdown = ({ toggle, setToggle }) => {
         </li>
         <hr />
         <li>
+          <Link onClick={() => setToggle(!toggle)} to="/blog">
+            Blog
+          </Link>
+        </li>
+        <hr />
+        <li>
           <Link onClick={() => setToggle(!toggle)} to="/contact-me">
             Contact Me
           </Link>
@@ -42,7 +48,6 @@ const StyleDropdown = styled(motion.div)`
   left: 3%;
   top: 15%;
   width: 94%;
-  height: 45vh;
   background: #fff;
   border: 2px solid #5fb4a8;
   border-radius: 0.2rem;

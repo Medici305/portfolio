@@ -34,6 +34,14 @@ const Nav = ({ toggle, setToggle }) => {
           </li>
           <li>
             <Link
+              className={pathname === "/blog" ? "highlight" : ""}
+              to="/blog"
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link
               className={pathname === "/contact-me" ? "highlight" : ""}
               to="/contact-me"
             >
@@ -56,18 +64,17 @@ const Nav = ({ toggle, setToggle }) => {
 // Styled components
 const NavStyle = styled.nav`
   min-height: 15vh;
-  //padding: 0 9rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* position: sticky;
-  top: 0;
-  z-index: 10; */
-  //border: 2px solid blue;
   background: #fff;
   ul {
     flex: 0.4;
-    justify-content: space-between; // Responsive
+    justify-content: space-between;
+    // Responsive
+    @media (max-width: 768px) {
+      flex: 0.5;
+    }
     @media (max-width: 578px) {
       display: none;
     }

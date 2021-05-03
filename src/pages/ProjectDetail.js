@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
@@ -6,6 +7,10 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import ScrollTop from "../components/ScrollTop";
 import CollabSection from "../components/CollabSection";
+import { motion } from "framer-motion";
+import { slideProject } from "../Animation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -24,21 +29,14 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "2rem",
     },
   },
-  leftCarousel: {
-    textAlign: "left",
-    cursor: "pointer",
+  carousel: {
     border: "2px solid #e2e2e2",
     borderLeft: "none",
-    margin: "2rem 0",
-    padding: "4rem 0",
-  },
-  rightCarousel: {
-    textAlign: "right",
-    cursor: "pointer",
-    border: "2px solid #e2e2e2",
     borderRight: "none",
     margin: "2rem 0",
-    padding: "4rem 0",
+    //padding: "2rem 0",
+    display: "flex",
+    justifyContent: "space-between",
   },
   button: {
     width: "50%",
@@ -60,14 +58,26 @@ const useStyles = makeStyles((theme) => ({
 const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
   const classes = useStyles();
   const { pathname } = useLocation();
-  console.log(pathname);
   const pageInfo = siteInfo.filter((site) => site.link === pathname)[0];
-  //onst url = pageInfo.link;
+  // State
+  let currentIndex = siteInfo.findIndex((site) => site.link === pathname);
+  const [currentObj, setCurrentObj] = useState(pageInfo);
+  const [nextObj, setNextObj] = useState(siteInfo[currentIndex + 1]);
+  console.log(nextObj);
   // Functions
-  //   const currentIndex = pageInfo.position;
-  //   console.log(currentIndex);
+  const skipHandler = (direction) => {
+    console.log(currentIndex);
+
+    if (direction === "next") {
+      console.log("increment");
+      currentIndex++;
+      setCurrentObj(siteInfo[currentIndex % siteInfo.length]);
+    }
+  };
+  //console.log(currentObj);
+
   return (
-    <Detail>
+    <Detail variant={slideProject} exit="exit" initial="hidden" animate="show">
       <ScrollTop />
       <Grid container className={classes.container}>
         {/* 1. Static Preview */}
@@ -102,11 +112,33 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
           </p>
         </Grid>
         {/* 4. Carousel next/prev */}
-        <Grid item xs={6} className={classes.leftCarousel}>
-          <p>Previous Project</p>
+        <Grid
+          item
+          xs={6}
+          className={classes.carousel}
+          onClick={() => skipHandler("prev")}
+        >
+          <Link to={`${currentObj.link}`}>
+            <Prev>
+              <h3>{nextObj.name}</h3>
+              <p>Previous Project</p>
+            </Prev>
+            <FontAwesomeIcon className="icon" size="2x" icon={faArrowLeft} />
+          </Link>
         </Grid>
-        <Grid item xs={6} className={classes.rightCarousel}>
-          <p>Next Project</p>
+        <Grid
+          item
+          xs={6}
+          className={classes.carousel}
+          onClick={() => skipHandler("next")}
+        >
+          <Link to={`${currentObj.link}`}>
+            <Next>
+              <h3 style={{ textAlign: "right" }}>{nextObj.name}</h3>
+              <p>Next Project</p>
+            </Next>
+            <FontAwesomeIcon className="icon" size="2x" icon={faArrowRight} />
+          </Link>
         </Grid>
         <Grid item xs={12}>
           <CollabSection />
@@ -116,7 +148,7 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
   );
 };
 
-const Detail = styled.div`
+const Detail = styled(motion.div)`
   h2 {
     text-align: left;
     margin-top: 2rem;
@@ -134,5 +166,11 @@ const Detail = styled.div`
     margin: 1rem 0;
   }
 `;
+
+const Next = styled.div`
+  text-align: right;
+`;
+
+const Prev = styled.div``;
 
 export default ProjectDetail;

@@ -4,6 +4,7 @@ import "fontsource-roboto";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import ContactMe from "./pages/ContactMe";
+import Blog from "./pages/Blog";
 import GlobalStyle from "./components/GlobalStyle";
 import Nav from "./components/Nav";
 import { Switch, Route, useLocation } from "react-router-dom";
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/portfolio/:id">
               <ProjectDetail siteInfo={siteInfo} setSiteInfo={setSiteInfo} />
+            </Route>
+            <Route exact path="/blog">
+              <Blog />
             </Route>
             <Route path="/contact-me">
               <ContactMe />

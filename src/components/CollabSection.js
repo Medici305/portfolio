@@ -54,10 +54,7 @@ const CollabSection = () => {
         </Grid>
         <Grid item className={classes.box} xs={12} md={2}>
           <Link to="/contact-me">
-            <Button
-              variant="contained"
-              className={classes.button}
-            >
+            <Button variant="contained" className={classes.button}>
               Contact Me
             </Button>
           </Link>
@@ -76,6 +73,15 @@ const Collaborate = styled.div`
     }
     @media (max-width: 992px) {
       width: 50%;
+    }
+  }
+  a {
+    text-align: center;
+    @media (max-width: 992px) {
+      width: 50%;
+    }
+    @media (max-width: 768px) {
+      width: 75%;
     }
   }
 `;
