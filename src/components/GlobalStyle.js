@@ -46,6 +46,11 @@ const GlobalStyle = createGlobalStyle`
         text-align: left;
     }
 
+    h4 {
+        margin: 1rem 0;
+        color: #5fb4a8;
+    }
+
     p {
         font-size: 1rem;
         line-height: 2rem;

@@ -8,6 +8,9 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Code from "../img/pexels-negative-space-169573.jpg";
+import Code1 from "../img/pexels-tranmautritam-251225-min.jpg";
+
+import useProgressiveImg from "./useProgressiveImg";
 // import CompressedCode from "../img/compressed-intro.jpg";
 
 const useStyles = makeStyles((theme) => ({

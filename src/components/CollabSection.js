@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    //border: "2px solid green",
   },
   text: {},
   button: {
@@ -70,9 +69,6 @@ const Collaborate = styled.div`
     &:hover {
       background: rgb(51, 50, 61);
       color: #fff;
-    }
-    @media (max-width: 992px) {
-      width: 50%;
     }
   }
   a {

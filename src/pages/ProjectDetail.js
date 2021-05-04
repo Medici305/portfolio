@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import ScrollTop from "../components/ScrollTop";
 import CollabSection from "../components/CollabSection";
 import { motion } from "framer-motion";
-import { slideProject } from "../Animation";
+import { pageAnimation } from "../Animation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -17,17 +16,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
   container: {
     justifyContent: "space-between",
   },
   image: {
-    margin: "5rem 0",
+    margin: "4rem 0",
   },
-  text: {},
   background: {
+    marginTop: "5rem",
     "@media (max-width: 992px)": {
       marginTop: "2rem",
+    },
+    "@media (max-width: 768px)": {
+      textAlign: "center",
     },
   },
   carousel: {
@@ -36,9 +37,12 @@ const useStyles = makeStyles((theme) => ({
     padding: "2rem 1rem",
     cursor: "pointer",
     "&:hover": {
-      background: "rgb(51, 50, 61)",
-      color: "#fff",
+      background: "#5fb4a8",
+      color: "white",
       transition: "all .5s ease-in-out",
+    },
+    "@media (max-width: 768px)": {
+      padding: "1rem 0",
     },
   },
   line: {
@@ -48,18 +52,19 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   button: {
+    width: "50%",
     padding: ".75rem 2rem",
     borderRadius: ".1rem",
     background: "transparent",
     border: "1px solid rgb(51, 50, 61)",
     fontFamily: "Public Sans",
     boxShadow: "none",
-    display: "block",
     marginBottom: "2rem",
     "&:hover": {
       background: "rgb(51, 50, 61)",
       color: "#fff",
     },
+    "@media (max-width: 768px)": { textAlign: "center" },
   },
 }));
 
@@ -68,32 +73,21 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
   const { pathname } = useLocation();
   const pageInfo = siteInfo.filter((site) => site.link === pathname)[0];
   // State
-  let currentIndex = siteInfo.findIndex((site) => site.link === pathname);
-  const [currentObj, setCurrentObj] = useState(pageInfo);
-  const [nextObj, setNextObj] = useState(siteInfo[currentIndex + 1]);
-  console.log(nextObj);
-  // Functions
-  const skipHandler = (direction) => {
-    console.log(currentIndex);
-
-    if (direction === "next") {
-      console.log("increment");
-      currentIndex++;
-      setCurrentObj(siteInfo[currentIndex % siteInfo.length]);
-    }
-  };
-  //console.log(currentObj);
+  let currentIndex = siteInfo.findIndex((site) => site === pageInfo);
+  // Next Page functionality
+  const nextPage = siteInfo[(currentIndex + 1) % siteInfo.length];
+  // prev page functionality
+  const prevPage =
+    (currentIndex - 1) % siteInfo.length === -1
+      ? siteInfo[siteInfo.length - 1]
+      : siteInfo[(currentIndex - 1) % siteInfo.length];
 
   return (
-    <Detail variant={slideProject} exit="exit" initial="hidden" animate="show">
+    <Detail variant={pageAnimation} exit="exit" initial="hidden" animate="show">
       <ScrollTop />
       <Grid container className={classes.container}>
-        {/* 1. Static Preview */}
-        <Grid item xs={12} className={classes.image}>
-          <img src={pageInfo.image} alt={pageInfo.name} />
-        </Grid>
-        {/* 2. Tech stack */}
-        <Grid item md={4} className={classes.text}>
+        {/* 1. Tech stack */}
+        <Grid item md={4} className={classes.background}>
           <div className="line"></div>
           <h2>{pageInfo.name}</h2>
           <p>{pageInfo.description}</p>
@@ -108,7 +102,7 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
           </Button>
           <div className="line"></div>
         </Grid>
-        {/* 3. Project Bacbkground */}
+        {/* 2. Project Bacbkground */}
         <Grid item md={7} className={classes.background}>
           <h3>Project Background</h3>
           <p>
@@ -131,23 +125,22 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
             dolore eius, eum, porro magni fuga.
           </p>
         </Grid>
+        {/* 3. Static Preview */}
+        <Grid item xs={12} className={classes.image}>
+          <img src={pageInfo.image} alt={pageInfo.name} />
+        </Grid>
         {/* 4. Carousel next/prev */}
         {/* 4.1 Previous Project */}
         <Grid container>
-          <Grid
-            item
-            xs={5}
-            className={classes.carousel}
-            onClick={() => skipHandler("prev")}
-          >
-            <AlteredLink to={`${currentObj.link}`}>
+          <Grid item xs={5} className={classes.carousel}>
+            <AlteredLink to={`${prevPage.link}`}>
               <Prev>
-                <h3>{nextObj.name}</h3>
-                <p>Previous Project</p>
+                <h3>{prevPage.name}</h3>
+                <p>Prev Project</p>
               </Prev>
               <FontAwesomeIcon
                 className="icon"
-                size="4x"
+                size="3x"
                 icon={faChevronLeft}
               />
             </AlteredLink>
@@ -160,15 +153,14 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
             item
             xs={5}
             className={classes.carousel}
-            onClick={() => skipHandler("next")}
             style={{ textAlign: "right" }}
           >
             <LinkAltered
-              to={`${currentObj.link}`}
+              to={`${nextPage.link}`}
               className={classes.carouselItem}
             >
               <Next>
-                <h3>{nextObj.name}</h3>
+                <h3>{nextPage.name}</h3>
                 <p>Next Project</p>
               </Next>
               <FontAwesomeIcon
@@ -189,17 +181,17 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
 
 const Detail = styled(motion.div)`
   h2 {
-    text-align: left;
     margin-top: 2rem;
+    text-align: left;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
+
   img {
     width: 100%;
     height: 80vh;
     object-fit: cover;
-  }
-  h4 {
-    margin: 1rem 0;
-    color: #5fb4a8;
   }
   p {
     margin: 1rem 0;
@@ -214,20 +206,42 @@ const LinkAltered = styled(Link)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @media (max-width: 578px) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    svg {
+      margin-right: 2rem;
+    }
+  }
 `;
 
 const AlteredLink = styled(LinkAltered)`
   flex-direction: row-reverse;
+  @media (max-width: 578px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    svg {
+      margin-left: 2rem;
+    }
+  }
 `;
 
 const Next = styled.div`
   margin-right: 2rem;
   h3 {
     text-align: right;
+    font-weight: 700;
     font-size: 1.5rem;
+    //margin: 0;
+    @media (max-width: 578px) {
+      font-size: 1rem;
+    }
   }
   p {
     margin: 0;
+    @media (max-width: 578px) {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -235,6 +249,7 @@ const Prev = styled(Next)`
   margin: 0rem 0rem 0rem 2rem;
   h3 {
     text-align: left;
+    margin: 0;
   }
 `;
 

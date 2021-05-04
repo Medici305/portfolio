@@ -58,7 +58,7 @@ const AboutSection = ({ myRef }) => {
           <img src={Julien} alt="Julien" />
         </Grid>
         <Grid item className={classes.text} xs={12} md={8} lg={6}>
-          <hr />
+          <div className="line"></div>
           <h2>About Me</h2>
           <p>
             I’m a junior front-end developer looking for a new role in an
@@ -75,7 +75,7 @@ const AboutSection = ({ myRef }) => {
               Go To Portfolio
             </Button>
           </Link>
-          <hr />
+          <div className="line"></div>
         </Grid>
       </Grid>
     </About>

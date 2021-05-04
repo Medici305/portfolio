@@ -5,18 +5,12 @@ import huddleBootstrap from "./img/huddle-desktop-preview.jpg";
 import Blogr from "./img/blogr-desktop-preview.jpg";
 import ipTracking from "./img/ip-address-tracking-desktop-preview.jpg";
 import urlShortening from "./img/url-shortening-landing-page-desktop-preview.jpg";
-import One from "./img/portfolio-page-icons/zero.jpg";
-import Two from "./img/portfolio-page-icons/One.jpg";
-import Three from "./img/portfolio-page-icons/Three.jpg";
-import Four from "./img/portfolio-page-icons/Four.jpg";
-import Five from "./img/portfolio-page-icons/Five.jpg";
-import Six from "./img/portfolio-page-icons/Six.jpg";
+//import todoIcon from './img/portfolio-page-icons/pexels - ann - nekr -5797912'
 
 const data = () => {
   return [
     {
       image: todoApp,
-      icon: One,
       name: "Todo App",
       description:
         "The classic todo app with a few twists! This app includes a dark/light theme toggle and drag & drop reordering for anyone wanting an extra test.",
@@ -29,7 +23,6 @@ const data = () => {
     },
     {
       image: carouselHomepage,
-      icon: Two,
       name: "Carousel Homepage",
       description:
         "This small homepage challenge packs a big punch to test your layout skills. There's also a slider in there to add a JS layer for extra practice.",
@@ -42,7 +35,6 @@ const data = () => {
     },
     {
       image: huddleBootstrap,
-      icon: Three,
       name: "Huddle Bootstrap",
       description:
         "The classic todo app with a few twists! This app includes a dark/light theme toggle and drag & drop reordering for anyone wanting an extra test.",
@@ -55,7 +47,6 @@ const data = () => {
     },
     {
       image: Blogr,
-      icon: Four,
       name: "Blogr Landing Page",
       description:
         "Flex your layout muscles with this landing page challenge. You'll mostly be working with HTML & CSS for this project with a tiny bit of JS for the mobile menu.",
@@ -68,7 +59,6 @@ const data = () => {
     },
     {
       image: ipTracking,
-      icon: Five,
       name: "IP Address Tracker",
       description:
         "In this challenge, you'll be using two separate APIs together to create an IP Address Tracking app.",
@@ -81,7 +71,6 @@ const data = () => {
     },
     {
       image: urlShortening,
-      icon: Six,
       name: "URL shortening API landing page",
       description:
         "Integrate with the shrtcode URL shortening API and play with browser storage in this landing page challenge.",

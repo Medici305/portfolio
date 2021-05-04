@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
   boxes: {
     marginTop: "4rem",
     marginBottom: "4rem",
@@ -18,9 +17,6 @@ const useStyles = makeStyles((theme) => ({
     "@media (max-width: 992px)": {
       marginTop: "2rem",
     },
-  },
-  box: {
-    //border: "2px solid yellow",
   },
   form: {
     display: "flex",
@@ -67,13 +63,9 @@ const SendEmail = () => {
         }
       );
     e.target.reset();
-    setTimeout(() => {
-      refreshPage();
-    }, 3000);
-  }
-
-  function refreshPage() {
-    window.location.reload(false);
+    // setTimeout(() => {
+    //   refreshPage();
+    // }, 3000);
   }
 
   return (
