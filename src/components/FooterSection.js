@@ -93,7 +93,7 @@ const Footer = styled.div`
   a {
     color: #fff;
     margin-left: 2rem;
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       text-align: center;
       margin: 0;
     }

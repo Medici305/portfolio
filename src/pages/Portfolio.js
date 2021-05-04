@@ -72,7 +72,7 @@ const Portfolio = ({ siteInfo, setSiteInfo }) => {
         site.even ? (
           <Grid container key={site.id} className={classes.container}>
             <Grid item xs={12} md={4} lg={6}>
-              <img src={site.image} alt={site.name} />
+              <img src={site.icon} alt={site.name} />
             </Grid>
             <Grid item className={classes.text} xs={12} md={8} lg={6}>
               <div className="line"></div>
@@ -102,7 +102,7 @@ const Portfolio = ({ siteInfo, setSiteInfo }) => {
               <div className="line"></div>
             </Grid>
             <Grid item className={classes.image} xs={12} md={4} lg={6}>
-              <img src={site.image} alt={site.name} />
+              <img src={site.icon} alt={site.name} />
             </Grid>
           </Grid>
         )
@@ -118,8 +118,10 @@ const StyledPortfolio = styled(motion.div)`
   margin: 5rem 0;
   img {
     width: 100%;
-    height: 60vh;
+    //height: 50vh;
     object-fit: cover;
+    border-radius: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     @media (max-width: 578px) {
       height: 40vh;
     }
