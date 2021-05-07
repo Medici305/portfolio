@@ -156,6 +156,9 @@ const Contact = styled.div`
       color: rgb(51, 50, 61);
     }
   }
+  @media (max-width: 578px) {
+    margin-bottom: 7.5rem;
+  }
 `;
 
 export default SendEmail;

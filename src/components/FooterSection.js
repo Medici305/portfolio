@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -44,16 +44,25 @@ const FooterSection = () => {
             <FontAwesomeIcon size="3x" icon={faCode} />
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="about" spy={true} smooth={true} duration={200}>
+                  About Me
+                </Link>
               </li>
-              <li className="spacing-top">
-                <Link to="/portfolio">Portfolio</Link>
-              </li>
-              <li className="spacing-bottom">
-                <Link to="/blog">Blog</Link>
+              <li className="spacing">
+                <Link
+                  className="spacing"
+                  to="portfolio"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                >
+                  Portfolio
+                </Link>
               </li>
               <li>
-                <Link to="/contact-me">Contact Me</Link>
+                <Link spy={true} smooth={true} duration={500}>
+                  Contact Me
+                </Link>
               </li>
             </ul>
           </Grid>
@@ -93,6 +102,7 @@ const Footer = styled.div`
   a {
     color: #fff;
     margin-left: 2rem;
+    cursor: pointer;
     @media (max-width: 992px) {
       text-align: center;
       margin: 0;
@@ -117,11 +127,8 @@ const Footer = styled.div`
       justify-content: center;
       align-items: center;
       padding: 2rem 0;
-      .spacing-top {
-        padding: 1rem 0 0.5rem 0;
-      }
-      .spacing-bottom {
-        padding: 0.5rem 0 1rem 0;
+      .spacing {
+        padding: 1rem 0;
       }
     }
   }

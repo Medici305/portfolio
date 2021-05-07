@@ -19,15 +19,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   box: {
-    // border: "2px solid red",
     marginTop: "3rem",
   },
 }));
 
-const GetInTouch = () => {
+const GetInTouch = ({ contactRef }) => {
   const classes = useStyles();
   return (
-    <StyleGreet className={classes.root}>
+    <StyleGreet ref={contactRef} className={classes.root} id="contact-me">
+      <h1>Contact Me</h1>
       {/* 1. Get in touch */}
       <Grid container className={classes.boxes}>
         <div className="line"></div>
@@ -62,7 +62,8 @@ const GetInTouch = () => {
           <a
             href="https://www.linkedin.com/in/julien-o-841570190/"
             target="_blank"
-            rel="noreferrer"t
+            rel="noreferrer"
+            t
           >
             <FontAwesomeIcon className="icon" size="3x" icon={faLinkedin} />
           </a>
@@ -73,6 +74,10 @@ const GetInTouch = () => {
 };
 
 const StyleGreet = styled.div`
+  h1 {
+    text-align: center;
+    margin-bottom: 7.5rem;
+  }
   h2 {
     text-align: left;
   }

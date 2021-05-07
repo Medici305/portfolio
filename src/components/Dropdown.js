@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 // Animation
 import { motion } from "framer-motion";
 import { dropdown } from "../Animation";
+
+//<Link onClick={() => setToggle(!toggle)} to="/">
 
 const Dropdown = ({ toggle, setToggle }) => {
   return (
@@ -15,25 +17,35 @@ const Dropdown = ({ toggle, setToggle }) => {
     >
       <ul>
         <li>
-          <Link onClick={() => setToggle(!toggle)} to="/">
-            Home
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            duration={200}
+            onClick={() => setToggle(!toggle)}
+          >
+            About Me
           </Link>
         </li>
-        <hr />
         <li>
-          <Link onClick={() => setToggle(!toggle)} to="/portfolio">
+          <Link
+            to="portfolio"
+            spy={true}
+            smooth={true}
+            duration={500}
+            onClick={() => setToggle(!toggle)}
+          >
             Portfolio
           </Link>
         </li>
-        <hr />
         <li>
-          <Link onClick={() => setToggle(!toggle)} to="/blog">
-            Blog
-          </Link>
-        </li>
-        <hr />
-        <li>
-          <Link onClick={() => setToggle(!toggle)} to="/contact-me">
+          <Link
+            to="contact-me"
+            spy={true}
+            smooth={true}
+            duration={500}
+            onClick={() => setToggle(!toggle)}
+          >
             Contact Me
           </Link>
         </li>

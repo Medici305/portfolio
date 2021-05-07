@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Julien from "../img/anime.jpg";
+import { Link } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,11 +48,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AboutSection = ({ myRef }) => {
+const AboutSection = ({ aboutRef, portfolioRef }) => {
   const classes = useStyles();
-
+  const executeScroll = () => portfolioRef.current.scrollIntoView();
   return (
-    <About ref={myRef} className={classes.root}>
+    <About ref={aboutRef} className={classes.root} id="about">
       <Grid container className={classes.box}>
         <Grid item className={classes.image} xs={12} md={4} lg={6}>
           <img src={Julien} alt="Julien" />
@@ -70,8 +70,12 @@ const AboutSection = ({ myRef }) => {
             find me outdoors. I love being out in nature whether that’s going
             for a walk, run or cycling. I’d love you to check out my work.
           </p>
-          <Link to="/portfolio">
-            <Button variant="contained" className={classes.button}>
+          <Link to="portfolio" spy={true} smooth={true} duration={200}>
+            <Button
+              variant="contained"
+              onClick={executeScroll}
+              className={classes.button}
+            >
               Go To Portfolio
             </Button>
           </Link>

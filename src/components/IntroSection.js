@@ -1,95 +1,91 @@
 import React from "react";
 import styled from "styled-components";
+import Nav from "./Nav";
 import { makeStyles } from "@material-ui/core/styles";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Grid from "@material-ui/core/Grid";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Code from "../img/pexels-negative-space-169573.jpg";
-import Code1 from "../img/pexels-tranmautritam-251225-min.jpg";
-
-import useProgressiveImg from "./useProgressiveImg";
-// import CompressedCode from "../img/compressed-intro.jpg";
+import Code from "../img/pexels-jayant-kulkarni-910213.jpg";
+import { Link } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    //border: "2px solid black",
-    marginBottom: "5rem",
+    marginBottom: "10rem",
     justifyContent: "center",
-    // mobile Screen and below
-    "@media (max-width: 578px)": {
-      position: "static",
-    },
-    // Tablet Screen and above
-    "@media (min-width: 578px)": {
-      position: "relative",
-    },
   },
-  image: {
-    color: theme.palette.text.secondary,
-  },
-  button: {
-    marginTop: "2rem",
-    //padding: "1rem 2rem",
-    padding: ".75rem 1rem",
-    borderRadius: ".1rem",
-    background: "rgb(51, 50, 61)",
-    fontFamily: "Public Sans",
-    boxShadow: "none",
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
   },
   text: {
-    position: "absolute",
-    bottom: "0",
-    left: "0",
-    background: "#fff",
-    color: "rgb(51, 50, 61)",
-    //border: "2px solid red",
-    padding: "4rem",
-    textAlign: "center",
+    color: "#fff",
+    //border: "2px solid rgb(51, 50, 61)",
+    padding: "2rem",
+    textAlign: "right",
     // Tablet screen
     "@media (max-width: 786px)": {
       padding: "3rem",
+      textAlign: "right",
     },
     // mobile Screen and below
     "@media (max-width: 578px)": {
       position: "static",
-      margin: "0 auto",
-      padding: "0rem",
+      padding: "1rem 2rem",
+      textAlign: "center",
+    },
+  },
+  button: {
+    width: "30%",
+    padding: ".75rem 2rem",
+    borderRadius: ".1rem",
+    background: "transparent",
+    border: "1px solid rgb(51, 50, 61)",
+    color: "rgb(51,50,61)",
+    fontFamily: "Public Sans",
+    boxShadow: "none",
+    marginTop: "2rem",
+    "&:hover": {
+      background: "rgb(51, 50, 61)",
+      color: "#fff",
+    },
+    "@media (max-width: 992px)": {
+      margin: "2rem 0",
+    },
+    "@media (max-width: 578px)": {
+      width: "75%",
     },
   },
 }));
 
-const IntroSection = ({ myRef }) => {
+const IntroSection = ({ aboutRef, toggle, setToggle, portfolioRef }) => {
   const classes = useStyles();
   // Function
-  const executeScroll = () => myRef.current.scrollIntoView();
-
+  const executeScroll = () => aboutRef.current.scrollIntoView();
   return (
     <Intro className={classes.root}>
-      <Grid container className={classes.box}>
-        <Grid item className={classes.image} xs={12}>
-          <LazyLoadImage
-            alt="code"
-            effect="blur"
-            src={Code}
-            height="60vh"
-            width="100%"
-            placeholderSrc={<CircularProgress />} // use normal <img> attributes as props
-          />
-        </Grid>
-        <Grid item className={classes.text} sm={8} lg={5}>
-          <h1>Hey, I'm Julien Osman and I love building beautiful websites.</h1>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={executeScroll}
-            className={classes.button}
-            startIcon={<ExpandMoreIcon />}
-          >
-            About Me
-          </Button>
+      <Nav
+        toggle={toggle}
+        setToggle={setToggle}
+        aboutRef={aboutRef}
+        porfolioRef={portfolioRef}
+      />
+      <Grid container className={classes.container}>
+        <Grid item className={classes.text} lg={8}>
+          <h1>
+            Hello, my name is Julien Osman and I love building beautiful
+            websites.
+          </h1>
+          <Link to="about" spy={true} smooth={true} duration={200}>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={executeScroll}
+              className={classes.button}
+            >
+              About Me
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </Intro>
@@ -98,33 +94,26 @@ const IntroSection = ({ myRef }) => {
 
 // styled components
 const Intro = styled.div`
+  background-image: url(${Code});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  @media (max-width: 578px) {
+    background-position: 25% 70%;
+    min-height: 110vh;
+  }
   h1 {
+    //color: #fff;
   }
   img {
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     object-fit: cover;
     // Responsive
     @media (max-width: 578px) {
-      height: 40vh;
+      height: 60vh;
       //border: 2px solid green;
-    }
-  }
-  button {
-    text-align: center;
-    width: 50%;
-    &:hover {
-      background: #5fb4a8;
-    }
-    svg {
-      color: #fff;
-      margin-right: 2rem;
-      @media (max-width: 768px) {
-        margin-right: 0rem;
-      }
-    }
-    @media (max-width: 992px) {
-      width: 75%;
     }
   }
 `;

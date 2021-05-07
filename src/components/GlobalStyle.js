@@ -17,12 +17,12 @@ const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-family: "Ibarra Real Nova", serif;
-        font-size: 2rem;
-        line-height: 3rem;
+        font-size: 4rem;
+        line-height: 5rem;
         color: rgb(51, 50, 61);
     // Responsive
-        @media (max-width: 578px) {
-            font-size: 3rem;
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
             line-height: 3.5rem;
             margin-top: 1rem;
         }

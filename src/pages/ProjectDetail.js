@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
+  faBackward,
 } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -87,12 +88,28 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
       <ScrollTop />
       <Grid container className={classes.container}>
         {/* 1. Tech stack */}
+        <Grid
+          item
+          xs={10}
+          style={{ width: "50%", textAlign: "left" }}
+          className={classes.background}
+        >
+          <Button href="./" className={classes.button}>
+            <FontAwesomeIcon
+              className="icon"
+              size="1x"
+              style={{ marginRight: "2rem" }}
+              icon={faChevronLeft}
+            />
+            Go Back
+          </Button>
+        </Grid>
         <Grid item md={4} className={classes.background}>
           <div className="line"></div>
           <h2>{pageInfo.name}</h2>
           <p>{pageInfo.description}</p>
           {/* tech stack */}
-          <h4>HTML / CSS / JS</h4>
+          <h4>{pageInfo.techStack}</h4>
           <Button
             href={pageInfo.liveSite}
             target="_blank"
@@ -105,25 +122,7 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
         {/* 2. Project Bacbkground */}
         <Grid item md={7} className={classes.background}>
           <h3>Project Background</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis
-            perferendis labore odit. Voluptates, dolores at? Nulla odio error
-            beatae dicta harum quos doloremque voluptate, architecto dolore
-            aliquid ipsam id facere dolorem nobis provident repellat corporis
-            omnis nesciunt deserunt quae magni sit? Corporis ea labore suscipit
-            dolorem ipsam tempore ullam quaerat sit fugit laborum libero nihil
-            similique officia nulla tempora eligendi, id sed totam? Eum quae
-            pariatur aperiam voluptatem sunt molestiae omnis dolores natus. Iure
-            placeat maxime eius eos! Beatae assumenda unde quidem reprehenderit
-            praesentium illum nemo ab ratione quos. Quibusdam iure rerum eveniet
-            voluptatibus consequuntur praesentium nihil molestiae temporibus ut.
-            Obcaecati alias nostrum laborum dolorem rem culpa reprehenderit modi
-            veniam minima sapiente iusto autem, eaque perspiciatis quidem
-            praesentium error iure accusantium id quasi dolores! Mollitia
-            veritatis quidem illum vel nihil minima odio earum amet rem error
-            officiis quam corporis, neque temporibus deserunt distinctio animi
-            dolore eius, eum, porro magni fuga.
-          </p>
+          <p>{pageInfo.detail}</p>
         </Grid>
         {/* 3. Static Preview */}
         <Grid item xs={12} className={classes.image}>

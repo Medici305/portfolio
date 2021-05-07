@@ -1,73 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Dropdown from "./Dropdown";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-scroll";
 import Container from "@material-ui/core/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCode, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = ({ toggle, setToggle }) => {
-  const { pathname } = useLocation();
+const Nav = ({ aboutRef, portfolioRef }) => {
+  const [toggle, setToggle] = useState(false);
   return (
-    <Container>
-      <NavStyle>
-        {/* 1. Logo */}
-        <Logo>
-          <Link to="/">
+    <Background>
+      <Container>
+        <NavStyle>
+          {/* 1. Logo */}
+          <Logo>
             <FontAwesomeIcon size="4x" icon={faCode} />
-          </Link>
-        </Logo>
-        {/* 2. Nav links */}
-        <ul>
-          <li>
-            <Link className={pathname === "/" ? "highlight" : ""} to="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={pathname === "/portfolio" ? "highlight" : ""}
-              to="/portfolio"
-            >
-              Portfolio
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={pathname === "/blog" ? "highlight" : ""}
-              to="/blog"
-            >
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={pathname === "/contact-me" ? "highlight" : ""}
-              to="/contact-me"
-            >
-              Contact Me
-            </Link>
-          </li>
-        </ul>
-        {/* 3. Hamburger */}
-        <FontAwesomeIcon
-          onClick={() => setToggle(!toggle)}
-          size="2x"
-          icon={toggle ? faTimes : faBars}
-        />
-        {toggle && <Dropdown toggle={toggle} setToggle={setToggle} />}
-      </NavStyle>
-    </Container>
+          </Logo>
+          {/* 2. Nav links */}
+          <ul>
+            <li>
+              <Link to="about" spy={true} smooth={true} duration={200}>
+                About Me
+              </Link>
+            </li>
+            <li>
+              <Link to="portfolio" spy={true} smooth={true} duration={500}>
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link to="contact-me" spy={true} smooth={true} duration={500}>
+                Contact Me
+              </Link>
+            </li>
+          </ul>
+          {/* 3. Hamburger */}
+          <FontAwesomeIcon
+            onClick={() => setToggle(!toggle)}
+            size="2x"
+            icon={toggle ? faTimes : faBars}
+          />
+          {toggle && <Dropdown toggle={toggle} setToggle={setToggle} />}
+        </NavStyle>
+      </Container>
+    </Background>
   );
 };
 
 // Styled components
+const Background = styled.div`
+  //background-color: red;
+`;
+
 const NavStyle = styled.nav`
   min-height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
   ul {
     flex: 0.4;
     justify-content: space-between;
@@ -82,6 +71,7 @@ const NavStyle = styled.nav`
       transition: all 0.5s ease-in-out;
       color: rgb(51, 50, 61);
       font-weight: 600;
+      cursor: pointer;
       &:hover {
         color: #5fb4a8;
       }
@@ -93,9 +83,6 @@ const NavStyle = styled.nav`
   hr {
     width: 80%;
     border-radius: 4rem;
-  }
-  @media (max-width: 992px) {
-    //padding: 0 2rem;
   }
   .highlight {
     color: #5fb4a2;
