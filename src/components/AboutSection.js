@@ -49,12 +49,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AboutSection = ({ aboutRef, portfolioRef }) => {
+const AboutSection = () => {
   const classes = useStyles();
-  const executeScroll = () => portfolioRef.current.scrollIntoView();
   return (
     <Container>
-      <About ref={aboutRef} className={classes.root} id="about">
+      <About className={classes.root} id="about">
         <Grid container className={classes.box}>
           <Grid item className={classes.image} xs={12} md={4} lg={6}>
             <img src={Julien} alt="Julien" />
@@ -76,7 +75,6 @@ const AboutSection = ({ aboutRef, portfolioRef }) => {
             <Link to="portfolio" smooth="true" duration={200}>
               <Button
                 variant="contained"
-                onClick={executeScroll}
                 className={classes.button}
               >
                 Go To Portfolio

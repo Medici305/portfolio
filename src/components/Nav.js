@@ -9,7 +9,7 @@ import { faBars, faCode, faTimes } from "@fortawesome/free-solid-svg-icons";
 const Nav = ({ aboutRef, portfolioRef }) => {
   const [toggle, setToggle] = useState(false);
   return (
-    <Background>
+    <>
       <Container>
         <NavStyle>
           {/* 1. Logo */}
@@ -43,15 +43,11 @@ const Nav = ({ aboutRef, portfolioRef }) => {
           {toggle && <Dropdown toggle={toggle} setToggle={setToggle} />}
         </NavStyle>
       </Container>
-    </Background>
+    </>
   );
 };
 
 // Styled components
-const Background = styled.div`
-  //background-color: red;
-`;
-
 const NavStyle = styled.nav`
   min-height: 15vh;
   display: flex;
@@ -79,6 +75,7 @@ const NavStyle = styled.nav`
   }
   svg {
     color: rgb(51, 50, 61);
+    z-index: 3000;
   }
   hr {
     width: 80%;

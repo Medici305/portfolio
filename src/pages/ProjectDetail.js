@@ -71,9 +71,11 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "center",
       alignContent: "center",
       width: "75%",
+      margin: "0 auto",
+      marginBottom: "2rem",
     },
   },
-  return: {
+  returnBtn: {
     padding: ".75rem 2rem",
     borderRadius: ".1rem",
     background: "transparent",
@@ -108,14 +110,14 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
           style={{ width: "50%", textAlign: "left" }}
           className={classes.background}
         >
-          <Button href="./" className={classes.return}>
+          <Button href="./" className={classes.returnBtn}>
             <FontAwesomeIcon
               className="icon"
               size="1x"
               style={{ marginRight: "2rem" }}
               icon={faChevronLeft}
             />
-            Return
+            Home
           </Button>
         </Grid>
         <Grid item md={4} className={classes.background}>
@@ -208,6 +210,11 @@ const Detail = styled(motion.div)`
       text-align: center;
     }
   }
+  h3 {
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
 
   img {
     width: 100%;
@@ -216,6 +223,9 @@ const Detail = styled(motion.div)`
   }
   p {
     margin: 1rem 0;
+    @media (max-width: 768px) {
+      //text-align: justify;
+    }
   }
   hr {
     transform: rotate(90deg);
@@ -231,7 +241,7 @@ const LinkAltered = styled(Link)`
     flex-direction: column-reverse;
     align-items: flex-end;
     svg {
-      margin-right: 2rem;
+      display: none;
     }
   }
 `;

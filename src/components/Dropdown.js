@@ -1,35 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
-// Animation
-import { motion } from "framer-motion";
-import { dropdown } from "../Animation";
-
-//<Link onClick={() => setToggle(!toggle)} to="/">
 
 const Dropdown = ({ toggle, setToggle }) => {
   return (
-    <StyleDropdown
-      variants={dropdown}
-      exit="exit"
-      initial="hidden"
-      animate="show"
-    >
+    <StyleDropdown>
       <ul>
         <li>
-          <Link
-            to="about"
-
-            duration={200}
-            onClick={() => setToggle(!toggle)}
-          >
+          <Link to="about" duration={200} onClick={() => setToggle(!toggle)}>
             About Me
           </Link>
         </li>
         <li>
           <Link
             to="portfolio"
-
             duration={500}
             onClick={() => setToggle(!toggle)}
           >
@@ -39,7 +23,6 @@ const Dropdown = ({ toggle, setToggle }) => {
         <li>
           <Link
             to="contact-me"
-
             duration={500}
             onClick={() => setToggle(!toggle)}
           >
@@ -52,13 +35,17 @@ const Dropdown = ({ toggle, setToggle }) => {
 };
 
 // Style components
-const StyleDropdown = styled(motion.div)`
-  position: absolute;
-  left: 3%;
-  top: 15%;
-  width: 94%;
-  background: #fff;
-  border: 2px solid #5fb4a8;
+const StyleDropdown = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d3d3d3;
   border-radius: 0.2rem;
   z-index: 200;
   @media (min-width: 578px) {

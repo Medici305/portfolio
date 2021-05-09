@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { pageAnimation } from "../Animation";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -59,14 +57,7 @@ const useStyles = makeStyles((theme) => ({
 const Portfolio = ({ siteInfo, setSiteInfo, portfolioRef }) => {
   const classes = useStyles();
   return (
-    <StyledPortfolio
-      ref={portfolioRef}
-      id="portfolio"
-      variants={pageAnimation}
-      exit="exit"
-      initial="hidden"
-      animate="show"
-    >
+    <StyledPortfolio id="portfolio">
       <Container>
         <h1>Portfolio</h1>
         {siteInfo.map((site) =>
@@ -114,7 +105,7 @@ const Portfolio = ({ siteInfo, setSiteInfo, portfolioRef }) => {
 };
 
 // Styled components
-const StyledPortfolio = styled(motion.div)`
+const StyledPortfolio = styled.div`
   background: #fefbf6;
   color: black;
   margin: 5rem 0;
@@ -124,9 +115,7 @@ const StyledPortfolio = styled(motion.div)`
   }
   img {
     width: 100%;
-    //height: 50vh;
     object-fit: cover;
-    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     @media (max-width: 578px) {
       height: 40vh;
     }

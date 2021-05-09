@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     color: "#fff",
-    //border: "2px solid rgb(51, 50, 61)",
     padding: "2rem",
     textAlign: "right",
     // Tablet screen
@@ -58,18 +57,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const IntroSection = ({ aboutRef, toggle, setToggle, portfolioRef }) => {
+const IntroSection = ({ toggle, setToggle }) => {
   const classes = useStyles();
-  // Function
-  const executeScroll = () => aboutRef.current.scrollIntoView();
   return (
     <Intro className={classes.root}>
-      <Nav
-        toggle={toggle}
-        setToggle={setToggle}
-        aboutRef={aboutRef}
-        porfolioRef={portfolioRef}
-      />
+      <Nav toggle={toggle} setToggle={setToggle} />
       <Grid container className={classes.container}>
         <Grid item className={classes.text} lg={8}>
           <h1>
@@ -80,7 +72,6 @@ const IntroSection = ({ aboutRef, toggle, setToggle, portfolioRef }) => {
             <Button
               variant="contained"
               color="secondary"
-              onClick={executeScroll}
               className={classes.button}
             >
               About Me
@@ -103,9 +94,6 @@ const Intro = styled.div`
     background-position: 25% 70%;
     min-height: 110vh;
   }
-  h1 {
-    //color: #fff;
-  }
   img {
     width: 100%;
     height: 100vh;
@@ -113,7 +101,6 @@ const Intro = styled.div`
     // Responsive
     @media (max-width: 578px) {
       height: 60vh;
-      //border: 2px solid green;
     }
   }
 `;

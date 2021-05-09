@@ -2,17 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTools } from "@fortawesome/free-solid-svg-icons";
-import { makeStyles } from "@material-ui/core/styles";
-import LinearProgress from "@material-ui/core/LinearProgress";
+//import { makeStyles } from "@material-ui/core/styles";
+//import LinearProgress from "@material-ui/core/LinearProgress";
 import ScrollTop from "../components/ScrollTop";
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 import { pageAnimation } from "../Animation";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const useStyles = makeStyles((theme) => ({}));
+//const useStyles = makeStyles((theme) => ({}));
 
 const Blog = () => {
-  const classes = useStyles();
+  //const classes = useStyles();
   return (
     <StyleBlog
       variants={pageAnimation}

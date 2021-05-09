@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
 import todoApp from "./img/todo-desktop-preview.jpg";
-import carouselHomepage from "./img/carousel-desktop-preview.jpg";
 import huddleBootstrap from "./img/huddle-desktop-preview.jpg";
 import Blogr from "./img/blogr-desktop-preview.jpg";
 import ipTracking from "./img/ip-address-tracking-desktop-preview.jpg";
