@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "fontsource-roboto";
 import Home from "./pages/Home";
-import ContactMe from "./pages/ContactMe";
 import Blog from "./pages/Blog";
 import GlobalStyle from "./components/GlobalStyle";
 import Container from "@material-ui/core/Container";
@@ -29,9 +28,6 @@ function App() {
           </Route>
           <Route exact path="/blog">
             <Blog />
-          </Route>
-          <Route path="/contact-me">
-            <ContactMe />
           </Route>
         </Switch>
       </AnimatePresence>

@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { pageAnimation } from "../Animation";
 import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import ScrollTop from "../components/ScrollTop";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
   container: {
     marginBottom: "10rem",
     "@media (max-width: 992px)": {
@@ -68,53 +67,55 @@ const Portfolio = ({ siteInfo, setSiteInfo, portfolioRef }) => {
       initial="hidden"
       animate="show"
     >
-      <ScrollTop />
-      <h1>Portfolio</h1>
-      {siteInfo.map((site) =>
-        site.even ? (
-          <Grid container key={site.id} className={classes.container}>
-            <Grid item xs={12} md={4} lg={6}>
-              <img src={site.image} alt={site.name} />
-            </Grid>
-            <Grid item className={classes.text} xs={12} md={8} lg={6}>
-              <div className="line"></div>
-              <h2 className={classes.title}>{site.name}</h2>
-              <p>{site.description}</p>
-              <Button
-                href={site.link}
-                variant="contained"
-                className={classes.button}
-              >
-                view Project
-              </Button>
-              <div className="line"></div>
-            </Grid>
-          </Grid>
-        ) : (
-          <Grid container key={site.id} className={classes.container}>
-            <Grid item className={classes.text} xs={12} md={8} lg={6}>
-              <div className="line"></div>
-              <h2 className={classes.title}>{site.name}</h2>
-              <p>{site.description}</p>
-              <Link to={site.link}>
-                <Button variant="contained" className={classes.button}>
+      <Container>
+        <h1>Portfolio</h1>
+        {siteInfo.map((site) =>
+          site.even ? (
+            <Grid container key={site.id} className={classes.container}>
+              <Grid item xs={12} md={4} lg={6}>
+                <img src={site.image} alt={site.name} />
+              </Grid>
+              <Grid item className={classes.text} xs={12} md={8} lg={6}>
+                <div className="line"></div>
+                <h2 className={classes.title}>{site.name}</h2>
+                <p>{site.description}</p>
+                <Button
+                  href={site.link}
+                  variant="contained"
+                  className={classes.button}
+                >
                   view Project
                 </Button>
-              </Link>
-              <div className="line"></div>
+                <div className="line"></div>
+              </Grid>
             </Grid>
-            <Grid item className={classes.image} xs={12} md={4} lg={6}>
-              <img src={site.image} alt={site.name} />
+          ) : (
+            <Grid container key={site.id} className={classes.container}>
+              <Grid item className={classes.text} xs={12} md={8} lg={6}>
+                <div className="line"></div>
+                <h2 className={classes.title}>{site.name}</h2>
+                <p>{site.description}</p>
+                <Link to={site.link}>
+                  <Button variant="contained" className={classes.button}>
+                    view Project
+                  </Button>
+                </Link>
+                <div className="line"></div>
+              </Grid>
+              <Grid item className={classes.image} xs={12} md={4} lg={6}>
+                <img src={site.image} alt={site.name} />
+              </Grid>
             </Grid>
-          </Grid>
-        )
-      )}
+          )
+        )}
+      </Container>
     </StyledPortfolio>
   );
 };
 
 // Styled components
 const StyledPortfolio = styled(motion.div)`
+  background: #fefbf6;
   color: black;
   margin: 5rem 0;
   h1 {

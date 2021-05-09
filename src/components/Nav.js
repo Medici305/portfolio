@@ -14,22 +14,22 @@ const Nav = ({ aboutRef, portfolioRef }) => {
         <NavStyle>
           {/* 1. Logo */}
           <Logo>
-            <FontAwesomeIcon size="4x" icon={faCode} />
+            <FontAwesomeIcon size="3x" icon={faCode} />
           </Logo>
           {/* 2. Nav links */}
           <ul>
             <li>
-              <Link to="about" spy={true} smooth={true} duration={200}>
+              <Link to="about" smooth="true" duration={200}>
                 About Me
               </Link>
             </li>
             <li>
-              <Link to="portfolio" spy={true} smooth={true} duration={500}>
+              <Link to="portfolio" smooth="true" duration={500}>
                 Portfolio
               </Link>
             </li>
             <li>
-              <Link to="contact-me" spy={true} smooth={true} duration={500}>
+              <Link to="contact-me" smooth="true" duration={500}>
                 Contact Me
               </Link>
             </li>

@@ -22,13 +22,13 @@ const Home = ({ siteInfo, setSiteInfo }) => {
     >
       <ScrollTop />
       <IntroSection aboutRef={aboutUs} portfolioRef={Portfolio} />
+      <AboutSection aboutRef={aboutUs} portfolioRef={portfolio} />
+      <Portfolio
+        portfolioRef={portfolio}
+        siteInfo={siteInfo}
+        setSiteInfo={setSiteInfo}
+      />
       <Container>
-        <AboutSection aboutRef={aboutUs} portfolioRef={portfolio} />
-        <Portfolio
-          portfolioRef={portfolio}
-          siteInfo={siteInfo}
-          setSiteInfo={setSiteInfo}
-        />
         <GetInTouch contactRef={contactMe} />
         <SendEmail />
       </Container>

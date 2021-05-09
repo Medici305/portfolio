@@ -13,7 +13,6 @@ import {
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
   links: {
     display: "flex",
     alignItems: "center",
@@ -42,29 +41,7 @@ const FooterSection = () => {
         <Grid container className={classes.box}>
           <Grid item className={classes.links} xs={12} md={8} lg={6}>
             <FontAwesomeIcon size="3x" icon={faCode} />
-            <ul>
-              <li>
-                <Link to="about" spy={true} smooth={true} duration={200}>
-                  About Me
-                </Link>
-              </li>
-              <li className="spacing">
-                <Link
-                  className="spacing"
-                  to="portfolio"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link spy={true} smooth={true} duration={500}>
-                  Contact Me
-                </Link>
-              </li>
-            </ul>
+            <p>&copy; 2021 Julien Osman</p>
           </Grid>
           <Grid item className={classes.icon} xs={12} md={4} lg={6}>
             <a
@@ -108,6 +85,14 @@ const Footer = styled.div`
       margin: 0;
     }
   }
+  p {
+    padding: 2rem 0;
+    color: #fff;
+    margin-left: 2rem;
+    @media (max-width: 992px) {
+      margin-left: 0;
+    }
+  }
   svg {
     color: #fff;
     &:hover {
@@ -118,18 +103,6 @@ const Footer = styled.div`
     margin-left: 2rem;
     @media (max-width: 992px) {
       margin: 0;
-    }
-  }
-  ul {
-    @media (max-width: 992px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 0;
-      .spacing {
-        padding: 1rem 0;
-      }
     }
   }
   @media (max-width: 768px) {

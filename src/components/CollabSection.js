@@ -52,8 +52,11 @@ const CollabSection = () => {
           <div className="line"></div>
         </Grid>
         <Grid item className={classes.box} xs={12} md={2}>
-          <Link to="/contact-me">
-            <Button variant="contained" className={classes.button}>
+          <Link to="/">
+            <Button
+              variant="contained"
+              className={classes.button}
+            >
               Contact Me
             </Button>
           </Link>

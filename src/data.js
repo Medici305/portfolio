@@ -13,7 +13,7 @@ const data = () => {
       image: todoApp,
       name: "Todo App",
       description:
-        "The classic todo app with a few twists! This app includes a dark/light theme toggle",
+        "The classic todo app with a few twists! This app includes a dark/light theme toggle. Simple and awesome app to organize your tasks with very easy to use interface.",
       detail:
         "The best way to learn something is by doing. After completing the basic js concepts the cliche to-do list application was the first project I built to help implement my new skills. This project was designed to test your understanding of variables, arrays, functions, and scope. I also went ahead and added a bonus feature of dark mode which reduces eye strain. In this app a user will be able to add new tasks to be done, delete tasks, mark tasks after completing, filter our tasks on basis of completed or incomplete tasks. Data is saved to local storage so if you were to close the window or refresh the page the tasks you have added to the list will remain until you decide to delete them.  There is a number at the bottom that illustrates the number of tasks on the list. This number will increment as you add more tasks and decrements as you remove a task.",
       techStack: "HTML, SASS, JS",

@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-regular-svg-icons";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
   boxes: {
@@ -55,17 +55,15 @@ const SendEmail = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          setConfirm(!confirm);
+          setConfirm(true);
         },
         (error) => {
-          console.log(error.text);
         }
       );
     e.target.reset();
-    // setTimeout(() => {
-    //   refreshPage();
-    // }, 3000);
+    setTimeout(() => {
+      setConfirm(false);
+    }, 3000);
   }
 
   return (
@@ -109,7 +107,7 @@ const SendEmail = () => {
             {confirm && (
               <div className="confirmation">
                 <p>Message sent successfully</p>
-                <FontAwesomeIcon className="icon" icon={faThumbsUp} />
+                <FontAwesomeIcon className="icon" icon={faCheckCircle} />
               </div>
             )}
             <Button
@@ -153,7 +151,7 @@ const Contact = styled.div`
     align-items: center;
     svg {
       margin-left: 0.5rem;
-      color: rgb(51, 50, 61);
+      color: #0aca0a;
     }
   }
   @media (max-width: 578px) {

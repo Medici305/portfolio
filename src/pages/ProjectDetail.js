@@ -13,7 +13,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
-  faBackward,
 } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -53,11 +52,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   button: {
-    width: "50%",
     padding: ".75rem 2rem",
     borderRadius: ".1rem",
     background: "transparent",
     border: "1px solid rgb(51, 50, 61)",
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
     fontFamily: "Public Sans",
     boxShadow: "none",
     marginBottom: "2rem",
@@ -65,7 +66,20 @@ const useStyles = makeStyles((theme) => ({
       background: "rgb(51, 50, 61)",
       color: "#fff",
     },
-    "@media (max-width: 768px)": { textAlign: "center" },
+    "@media (max-width: 768px)": {
+      textAlign: "center",
+      justifyContent: "center",
+      alignContent: "center",
+      width: "75%",
+    },
+  },
+  return: {
+    padding: ".75rem 2rem",
+    borderRadius: ".1rem",
+    background: "transparent",
+    "&:hover": {
+      boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+    },
   },
 }));
 
@@ -94,14 +108,14 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
           style={{ width: "50%", textAlign: "left" }}
           className={classes.background}
         >
-          <Button href="./" className={classes.button}>
+          <Button href="./" className={classes.return}>
             <FontAwesomeIcon
               className="icon"
               size="1x"
               style={{ marginRight: "2rem" }}
               icon={faChevronLeft}
             />
-            Go Back
+            Return
           </Button>
         </Grid>
         <Grid item md={4} className={classes.background}>
@@ -114,8 +128,16 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
             href={pageInfo.liveSite}
             target="_blank"
             className={classes.button}
+            style={{ textAlign: "center" }}
           >
-            Visit Website
+            Live Site
+          </Button>
+          <Button
+            href={pageInfo.source}
+            target="_blank"
+            className={classes.button}
+          >
+            Github Code
           </Button>
           <div className="line"></div>
         </Grid>

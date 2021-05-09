@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Julien from "../img/anime.jpg";
@@ -52,37 +53,40 @@ const AboutSection = ({ aboutRef, portfolioRef }) => {
   const classes = useStyles();
   const executeScroll = () => portfolioRef.current.scrollIntoView();
   return (
-    <About ref={aboutRef} className={classes.root} id="about">
-      <Grid container className={classes.box}>
-        <Grid item className={classes.image} xs={12} md={4} lg={6}>
-          <img src={Julien} alt="Julien" />
+    <Container>
+      <About ref={aboutRef} className={classes.root} id="about">
+        <Grid container className={classes.box}>
+          <Grid item className={classes.image} xs={12} md={4} lg={6}>
+            <img src={Julien} alt="Julien" />
+          </Grid>
+          <Grid item className={classes.text} xs={12} md={8} lg={6}>
+            <div className="line"></div>
+            <h2>About Me</h2>
+            <p>
+              I’m a junior front-end developer looking for a new role in an
+              exciting company. I focus on writing accessible HTML, using modern
+              CSS practices and writing clean JavaScript. When writing
+              JavaScript code, I mostly use React, but I can adapt to whatever
+              tools are required. I’m based in London, UK, but I’m happy working
+              remotely and have experience in remote teams. When I’m not coding,
+              you’ll find me outdoors. I love being out in nature whether that’s
+              going for a walk, run or cycling. I’d love you to check out my
+              work.
+            </p>
+            <Link to="portfolio" smooth="true" duration={200}>
+              <Button
+                variant="contained"
+                onClick={executeScroll}
+                className={classes.button}
+              >
+                Go To Portfolio
+              </Button>
+            </Link>
+            <div className="line"></div>
+          </Grid>
         </Grid>
-        <Grid item className={classes.text} xs={12} md={8} lg={6}>
-          <div className="line"></div>
-          <h2>About Me</h2>
-          <p>
-            I’m a junior front-end developer looking for a new role in an
-            exciting company. I focus on writing accessible HTML, using modern
-            CSS practices and writing clean JavaScript. When writing JavaScript
-            code, I mostly use React, but I can adapt to whatever tools are
-            required. I’m based in London, UK, but I’m happy working remotely
-            and have experience in remote teams. When I’m not coding, you’ll
-            find me outdoors. I love being out in nature whether that’s going
-            for a walk, run or cycling. I’d love you to check out my work.
-          </p>
-          <Link to="portfolio" spy={true} smooth={true} duration={200}>
-            <Button
-              variant="contained"
-              onClick={executeScroll}
-              className={classes.button}
-            >
-              Go To Portfolio
-            </Button>
-          </Link>
-          <div className="line"></div>
-        </Grid>
-      </Grid>
-    </About>
+      </About>
+    </Container>
   );
 };
 

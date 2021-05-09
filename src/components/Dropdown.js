@@ -19,8 +19,7 @@ const Dropdown = ({ toggle, setToggle }) => {
         <li>
           <Link
             to="about"
-            spy={true}
-            smooth={true}
+
             duration={200}
             onClick={() => setToggle(!toggle)}
           >
@@ -30,8 +29,7 @@ const Dropdown = ({ toggle, setToggle }) => {
         <li>
           <Link
             to="portfolio"
-            spy={true}
-            smooth={true}
+
             duration={500}
             onClick={() => setToggle(!toggle)}
           >
@@ -41,8 +39,7 @@ const Dropdown = ({ toggle, setToggle }) => {
         <li>
           <Link
             to="contact-me"
-            spy={true}
-            smooth={true}
+
             duration={500}
             onClick={() => setToggle(!toggle)}
           >
