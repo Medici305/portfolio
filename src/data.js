@@ -101,7 +101,7 @@ const data = () => {
       liveSite: "https://user-search-app-github.netlify.app/",
       source: "https://github.com/Medici305/user-search-app",
       id: uuidv4(),
-      even: true,
+      even: false,
     },
   ];
 };
