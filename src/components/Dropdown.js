@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../Animation";
 
 const Dropdown = ({ toggle, setToggle }) => {
   return (
-    <StyleDropdown>
+    <StyleDropdown variants={pageAnimation} initial="hidden" animate="show">
       <ul>
         <li>
           <Link to="about" duration={200} onClick={() => setToggle(!toggle)}>
@@ -35,7 +37,7 @@ const Dropdown = ({ toggle, setToggle }) => {
 };
 
 // Style components
-const StyleDropdown = styled.div`
+const StyleDropdown = styled(motion.div)`
   position: fixed;
   left: 0;
   top: 0;
