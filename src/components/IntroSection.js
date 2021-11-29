@@ -249,12 +249,12 @@ const Intro = styled.div`
   }
   .MuiSpeedDial-fab {
     //color: white !important;
-    background-color: rgb(51, 50, 61);
+    background-color: rgb(51, 50, 61) !important;
     path {
       color: white;
     }
     &:hover {
-      //background-color: white;
+      background-color: white;
       path {
         color: rgb(51, 50, 61);
       }
