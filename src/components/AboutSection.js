@@ -49,11 +49,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AboutSection = () => {
+const AboutSection = ({ aboutRef }) => {
   const classes = useStyles();
   return (
     <Container>
-      <About className={classes.root} id="about">
+      <About className={classes.root} ref={aboutRef} id="about">
         <Grid container className={classes.box}>
           <Grid item className={classes.image} xs={12} md={4} lg={6}>
             <img src={Julien} alt="Julien" />
@@ -73,10 +73,7 @@ const AboutSection = () => {
               work.
             </p>
             <Link to="portfolio" smooth="true" duration={200}>
-              <Button
-                variant="contained"
-                className={classes.button}
-              >
+              <Button variant="contained" className={classes.button}>
                 Go To Portfolio
               </Button>
             </Link>

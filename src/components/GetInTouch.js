@@ -2,12 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTwitter,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
   boxes: {
@@ -22,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const GetInTouch = ({ contactRef }) => {
+const GetInTouch = () => {
   const classes = useStyles();
   return (
-    <StyleGreet ref={contactRef} id="contact-me">
+    <StyleGreet id="contact-me">
       <h1>Contact Me</h1>
       {/* 1. Get in touch */}
       <Grid container className={classes.boxes}>
@@ -44,15 +38,6 @@ const GetInTouch = ({ contactRef }) => {
             and attention to detail. Please do feel free to check out my online
             profiles below and get in touch using the form.
           </p>
-          <a href="https://github.com/Medici305">
-            <FontAwesomeIcon className="icon" size="3x" icon={faGithub} />
-          </a>
-          <a href="https://twitter.com/ProgrammingThug">
-            <FontAwesomeIcon className="icon" size="3x" icon={faTwitter} />
-          </a>
-          <a href="https://www.linkedin.com/in/julien-o-841570190/">
-            <FontAwesomeIcon className="icon" size="3x" icon={faLinkedin} />
-          </a>
         </Grid>
       </Grid>
     </StyleGreet>

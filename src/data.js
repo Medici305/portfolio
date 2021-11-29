@@ -6,6 +6,7 @@ import beatMachineMaker from "./img/portfolio-page-icons/beatmachine-maker-img.j
 import musicPlayer from "./img/portfolio-page-icons/music-player.PNG";
 import clockApp from "./img/clock-app.jpg";
 import githubUserSearch from "./img/github-user-search.jpg";
+import crowdFunding from "./img/crowdfunding.jpg";
 
 const data = () => {
   return [
@@ -18,7 +19,7 @@ const data = () => {
         "The best way to learn something is by doing. After completing the basic js concepts the cliche to-do list application was the first project I built to help implement my new skills. This project was designed to test your understanding of variables, arrays, functions, and scope. I also went ahead and added a bonus feature of dark mode which reduces eye strain. In this app a user will be able to add new tasks to be done, delete tasks, mark tasks after completing, filter our tasks on basis of completed or incomplete tasks. Data is saved to local storage so if you were to close the window or refresh the page the tasks you have added to the list will remain until you decide to delete them.  There is a number at the bottom that illustrates the number of tasks on the list. This number will increment as you add more tasks and decrements as you remove a task.",
       techStack: "HTML, SASS, JS",
       link: "/todo-app",
-      liveSite: "https://modern-todo-app.netlify.+app/",
+      liveSite: "https://modern-todo-app.netlify.app",
       source: "https://github.com/Medici305/Todo_App",
       id: uuidv4(),
       even: false,
@@ -32,7 +33,7 @@ const data = () => {
         "No matter how much we wanna perceive ourselves to be these logical people. At the end of the day we are creatives and creatives suffer without exposure to creativity. Music is the ultimate form of expression and i brought this to life through this project. Each square pad will play a noteso you free to be as creative as you want. Play and stop functionality is included by clicking on play button and the note will stop/play from last played note. If you feel you want a different instrument the option to do so is there i have included three alternative sounds for each instrument. Mute functionality if you want to specifically only hear certain instruments how it will sound without others playing. Last feature is the tempo, you can control it from slow to fast the choice is yours. ",
       techStack: "HTML, CSS, JS",
       link: "/beatmachine-maker",
-      liveSite: "https://beatmachine-maker-app.netlify.app",
+      liveSite: "https://medici-beatmachine.netlify.app",
       source: "https://github.com/Medici305/BeatMachine_Maker",
       id: uuidv4(),
       even: true,
@@ -102,6 +103,19 @@ const data = () => {
       source: "https://github.com/Medici305/user-search-app",
       id: uuidv4(),
       even: false,
+    },
+    {
+      image: crowdFunding,
+      name: "Crowdfunding Product Page",
+      description:
+        "This challenge will test both your layout and state management skills. As visitors make pledges, your goal is to keep track of the changes.",
+      detail: "8",
+      techStack: "React, Styled-Component",
+      link: "/crowdfunding-product-page",
+      liveSite: "https://crowdfunding-landing-page.netlify.app/",
+      source: "https://github.com/Medici305/crowdfunding-product-page",
+      id: uuidv4(),
+      even: true,
     },
   ];
 };

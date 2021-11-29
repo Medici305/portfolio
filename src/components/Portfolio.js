@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 const Portfolio = ({ siteInfo, setSiteInfo, portfolioRef }) => {
   const classes = useStyles();
   return (
-    <StyledPortfolio id="portfolio">
+    <StyledPortfolio id="portfolio" ref={portfolioRef}>
       <Container>
         <h1>Portfolio</h1>
         {siteInfo.map((site) =>

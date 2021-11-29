@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import IntroSection from "../components/IntroSection";
 import AboutSection from "../components/AboutSection";
 import GetInTouch from "../components/GetInTouch";
@@ -10,6 +10,10 @@ import { pageAnimation } from "../Animation";
 import ScrollTop from "../components/ScrollTop";
 
 const Home = ({ siteInfo, setSiteInfo }) => {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const portfolioRef = useRef(null);
+  const contactRef = useRef(null);
   return (
     <motion.div
       variants={pageAnimation}
@@ -18,10 +22,19 @@ const Home = ({ siteInfo, setSiteInfo }) => {
       animate="show"
     >
       <ScrollTop />
-      <IntroSection />
-      <AboutSection />
-      <Portfolio siteInfo={siteInfo} setSiteInfo={setSiteInfo} />
-      <Container>
+      <IntroSection
+        aboutRef={aboutRef}
+        portfolioRef={portfolioRef}
+        contactRef={contactRef}
+        homeRef={homeRef}
+      />
+      <AboutSection aboutRef={aboutRef} />
+      <Portfolio
+        siteInfo={siteInfo}
+        setSiteInfo={setSiteInfo}
+        portfolioRef={portfolioRef}
+      />
+      <Container ref={contactRef}>
         <GetInTouch />
         <SendEmail />
       </Container>

@@ -3,11 +3,11 @@ import "fontsource-roboto";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import GlobalStyle from "./components/GlobalStyle";
-import Container from "@material-ui/core/Container";
+//import Container from "@material-ui/core/Container";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import FooterSection from "./components/FooterSection";
-import ProjectDetail from "./pages/ProjectDetail";
+//import ProjectDetail from "./pages/ProjectDetail";
 import data from "./data";
 
 function App() {
@@ -21,11 +21,11 @@ function App() {
           <Route exact path="/">
             <Home siteInfo={siteInfo} setSiteInfo={setSiteInfo} />
           </Route>
-          <Route path="/:id">
+          {/* <Route path="/:id">
             <Container>
               <ProjectDetail siteInfo={siteInfo} setSiteInfo={setSiteInfo} />
             </Container>
-          </Route>
+          </Route> */}
           <Route exact path="/blog">
             <Blog />
           </Route>
