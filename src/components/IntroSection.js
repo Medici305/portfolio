@@ -251,12 +251,12 @@ const Intro = styled.div`
     //color: white !important;
     background-color: rgb(51, 50, 61) !important;
     path {
-      color: white;
+      color: white !important;
     }
     &:hover {
-      background-color: white;
+      background-color: white !important;
       path {
-        color: rgb(51, 50, 61);
+        color: rgb(51, 50, 61) !important;
       }
     }
   }
