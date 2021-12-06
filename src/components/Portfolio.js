@@ -70,13 +70,16 @@ const Portfolio = ({ siteInfo, setSiteInfo, portfolioRef }) => {
                 <div className="line"></div>
                 <h2 className={classes.title}>{site.name}</h2>
                 <p>{site.description}</p>
-                <Button
-                  href={site.link}
-                  variant="contained"
-                  className={classes.button}
-                >
-                  view Project
-                </Button>
+                <Link to={site.link}>
+                  <Button
+                    href={site.link}
+                    variant="contained"
+                    className={classes.button}
+                  >
+                    view Project
+                  </Button>
+                </Link>
+
                 <div className="line"></div>
               </Grid>
             </Grid>
