@@ -6,7 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import ScrollTop from "../components/ScrollTop";
-import CollabSection from "../components/CollabSection";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../Animation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -194,9 +193,7 @@ const ProjectDetail = ({ siteInfo, setSiteInfo }) => {
             </LinkAltered>
           </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <CollabSection />
-        </Grid>
+        <Grid item xs={12}></Grid>
       </Grid>
     </Detail>
   );

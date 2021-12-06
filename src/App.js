@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "fontsource-roboto";
 import Home from "./pages/Home";
-import Blog from "./pages/Blog";
+// import Blog from "./pages/Blog";
 import GlobalStyle from "./components/GlobalStyle";
 import Container from "@material-ui/core/Container";
 import { Switch, Route, useLocation } from "react-router-dom";
@@ -26,9 +26,9 @@ function App() {
               <ProjectDetail siteInfo={siteInfo} setSiteInfo={setSiteInfo} />
             </Container>
           </Route>
-          <Route exact path="/blog">
+          {/* <Route exact path="/blog">
             <Blog />
-          </Route>
+          </Route> */}
         </Switch>
       </AnimatePresence>
       <FooterSection />
